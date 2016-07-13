@@ -9,9 +9,9 @@
   "dependencies": {
     "lodash": "^4.13.1",
     "moment": "^2.13.0",
-    "native-base": "0.4.8",
+    "native-base": "0.4.9",
     "react": "^15.1.0",
-    "react-native": "^0.27.2",
+    "react-native": "0.27.2",
     "react-native-code-push": "^1.12.1-beta",
     "react-native-vector-icons": "^2.0.3",
     "react-redux": "^4.4.5",
