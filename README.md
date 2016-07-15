@@ -31,7 +31,7 @@ This is a starter kit that you can install on the fly to get the basic plumping 
 
  iOS | Android 
  :--:| :-----: 
- ![iOS-demo](/Screenshots/iOS-demo.gif) | ![android-demo](/Screenshots/android-demo.gif) 
+ ![ios-demo](/Screenshots/ios-demo.gif) | ![android-demo](/Screenshots/android-demo.gif) 
 
 
 ## Technologies
