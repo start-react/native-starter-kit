@@ -102,7 +102,7 @@ Performance wise, Easy Grid is noteworthy and works as fine as Flexbox, not much
 
 
 ## Installation
-####1. Clone this project or Download that ZIP file
+####1. Clone this project or Download the ZIP file
 
 ```sh
 $ git clone https://github.com/start-react/native-starter-kit.git
