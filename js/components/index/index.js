@@ -5,14 +5,22 @@ import {connect} from 'react-redux';
 
 import {pushNewRoute, replaceRoute} from '../../actions/route';
 
-import { View } from 'native-base';
+import { Container, Content, Text } from 'native-base';
+
+import myTheme from '../../themes/base-theme';
 
 
 class Index extends Component {
 
     render() {
         return (
-            <View />
+            <Container theme={myTheme}>
+            	<Content>
+            		<Text style={{marginTop: 180, marginLeft: 22, fontSize: 22, fontWeight: 'bold'}}>
+            			React Native - NativeBase Seed
+            		</Text>
+            	</Content>
+            </Container>
         )
     }
 }

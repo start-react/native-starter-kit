@@ -130,7 +130,7 @@ module.exports = {
     badgeColor: "#fff",
     badgeBg: "#ED1727",
 
-    lineHeight: 21,
+    lineHeight: (Platform.OS==='ios') ? 21 : 25,
 
     defaultSpinnerColor: "#45D56E",
     inverseSpinnerColor: "#1A191B",
