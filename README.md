@@ -35,7 +35,7 @@ react-native android
 rnpm link
 ```
 
-While running `react-native android` dont overwrite `index.android.js` file.
+While running `react-native android` do not overwrite `index.android.js` file.
 
 ###3. Simulate for iOS
 
