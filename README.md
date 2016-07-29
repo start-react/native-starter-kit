@@ -1,5 +1,5 @@
 
-## Native Starter Kit v3.1.0
+## Native Starter Kit v4.0.0
 
 ### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
 
@@ -24,7 +24,10 @@ This is a starter kit that you can install on the fly to get the basic plumping 
 -	[Screens](#screens)
 -	[Technologies](#technologies)
 -	[Installation](#installation)
--	[Featured Apps - Native Starter Pro](#featured-apps---native-starter-pro)
+-	[Featured Apps](#featured-apps)
+	-	[Native Starter Pro](#native-starter-pro---v400)
+	-	[Ecommerce Starter](#ecommerce-starter---v400)
+	-	[Flat App Theme](#flat-app-theme---v400)
 
 
 ## Screens
@@ -45,7 +48,7 @@ React Native helps in making the development work easier and allowing the develo
 React Native takes charge of the view controllers and programatically generates native views using javascript. This means that you can have all the speed and power of a native application, with the ease of development that comes with React.
 
 
-### [NativeBase](nativebase.io)
+### [NativeBase](http://nativebase.io/)
 
 NativeBase is a free and open source framework from the team of [StrapMobile](http://strapmobile.com/).
 
@@ -98,25 +101,28 @@ The layout system is an essential concept that needs to be mastered in order to 
 Easy Grid is very powerful and flexible layout system. No more worries about props of Flexbox such as alignItems, flexDirection, justifyContent, margin, padding, position, width etc. You can create any layout with all the available options that we have. Flexbox makes it look like percentages, however what actually is happening is just ratios. On the easier part, ratios are easier to represent than percentage/decimals. For this reason, the Easy Grid takes in ratios in place of percentage. 
 Performance wise, Easy Grid is noteworthy and works as fine as Flexbox, not much of calculation.
 
-[More Examples](http://nativebase.io/docs/v0.4.6/components#layout) . . .
+[More Examples](http://nativebase.io/docs/v0.5.2/components#layout) . . .
 
 
 ## Installation
-####1. Clone this project or Download the ZIP file
 
-```sh
-$ git clone https://github.com/start-react/native-starter-kit.git
-```
+###1. System Requirements
 
-####2.  System Requirements
+* Globally installed [node](https://nodejs.org/en/) >= 4.0
 
-*	Globally installed [npm](https://www.npmjs.org/)
+*	Globally installed [npm](https://www.npmjs.org/) >= 3.0
 
 *	Install [CodePush](https://microsoft.github.io/code-push/) globally and get keys for your app.
 
-####3. On the command prompt run the following commands
+
+
+###2. Installation
+
+On the command prompt run the following commands
 
 ```sh
+$ git clone https://github.com/start-react/native-starter-kit.git
+
 $ cd native-starter-kit/
 
 $ npm install
@@ -124,19 +130,13 @@ $ npm install
 $ rnpm link
 ```
 
-####4. Simulate for iOS
+###3. Simulate for iOS
 
 **Method One**
 
 *	Open the project in XCode from **ios/NativeStarterKit.xcodeproj**
 
 *	[CodePush](https://github.com/Microsoft/react-native-code-push) plugin installation:
-
-	*	Go to **"Build Phases"** tab of your project configuration.
-
-	*	Click **"+"** underneath the **"Link Binary With Libraries"** list and select the **libz.tbd** library underneath the iOS node that matches your target version.
-
-	![CodePush-plugin-installation](/Screenshots/codepush-plugin-installation.png)
 
 *	CodePush key deployment
 
@@ -157,7 +157,7 @@ $ rnpm link
 $ react-native run-ios
 ```
 
-####5. Simulate for Android
+###4. Simulate for Android
 
 *	Codepush key deployment
 
@@ -192,44 +192,71 @@ Note: If you are building Native Starter Kit for first time on your system, plea
 
 
 
-## Featured Apps - Native Starter Pro
-Having tried with the free version, Native Starter Kit and appreciate our product?
+## Featured Apps
 
-Get on the mobile fast track with [Native Starter Pro](http://strapmobile.com/native-starter-pro/), to build high-quality iOS and Android mobile apps. 
+Having tried with the free version, [Native Starter Kit](https://github.com/start-react/native-starter-kit) and appreciate our product?
 
-Based on [React Native](https://facebook.github.io/react-native/) and [NativeBase](http://nativebase.io/docs/v0.4.6/), Native Starter Pro is a beautifully designed, responsive iOS and Android app source code to quickly get started on your next project. 
+Get on the mobile fast track with the featured apps of NativeBase, to build high-quality iOS and Android mobile apps. 
 
-Native Starter Pro is a flexible React Native theme, built using [NativeBase](http://nativebase.io/documentation) and [Redux](https://github.com/reactjs/react-redux) with fusion of [ES6](http://es6-features.org/#Constants) which is best suited for developing apps that makes use of ready-made tools. The theme has several widget areas that allows you to extend your theme functionality with plugins. 
+Based on [React Native](https://facebook.github.io/react-native/) and [NativeBase](http://nativebase.io/docs/v0.4.6/), Native Starter Pro, Ecommerce Starter, Flat App Theme are beautifully designed with fusion of [Redux](https://github.com/reactjs/react-redux) and [ES6](http://es6-features.org/#Constants), responsive iOS and Android app source code to quickly get started on your next project. 
+
+
+### Native Starter Pro - v4.0.0
+
+Native Starter Pro is best suited for developing apps that makes use of ready-made tools. The theme has several widget areas that allows you to extend your theme functionality with plugins. 
 
 Native Starter Pro includes following ready-to-use and highly customizable components :
 
--	Button with various shapes and themes
--	Textbox
--	Form Elements
--	List
--	Header
--	Footer
--	Drawer
--	Full fledged collection of Icons
--	Spinner:Animated loading indicators which are flexible in diverse size and color.
--	ProgressBar: To visualize the process of work.
--	Modal
--	Ready to use Email Template
--	Interactive design of Calendar with fast swiping feature.
--	Scroll between the tabs
--	Responsive Navigator
--	Chat Messenger
+-	UI Elements: Button with various shapes and themes, Textbox, Form Elements, List, Full fledged collection of Icons
+-	Custom Elements: Header, Footer, Drawer, Spinner, ProgressBar, Modal, Ready to use Email Template, Interactive design of Calendar with fast swiping feature, Scroll between the tabs, Responsive Navigator, Chat Messenger
 -	Ready to use screens
 -	Easy theme customization
--	[Read More](http://strapmobile.com/docs/native-starter-pro/v3.1/)
+-	[Read More](http://strapmobile.com/docs/native-starter-pro/v4.0.0)
 
 **Quick links to Native Starter Pro**
 
--	*[Native Starter Pro Features](http://strapmobile.com/docs/native-starter-pro/v3.1/overview/whats-new-in-v3-1)*
--	*[Native Starter Pro Components](http://strapmobile.com/docs/native-starter-pro/v3.1/components)*
+-	*[Native Starter Pro Features](http://strapmobile.com/docs/native-starter-pro/v4.0.0/overview/whats-new-in-v4-0)*
+-	*[Native Starter Pro Components](http://strapmobile.com/docs/native-starter-pro/v4.0.0/components)*
 -	*[Native Starter Pro's App Generator](http://strapmobile.com/customizer/#/color)*
 -	*[Native Starter Pro Releases](http://strapmobile.com/native-starter-pro-releases/)*
 
 
+### Ecommerce Starter - v4.0.0
+
+Ecommerce Starter, a perfect starter kit for e-commerce apps. Readily available pages along with rich collection of UI elements.
+
+Ready to use screens:
+
+-	SignUp/Login
+-	Tabs
+-	Fluid grid layout to advertise various brands for your products
+-	List-view and grid-view of product advertisements
+-	Product details in your cart
+-	[Read More](http://strapmobile.com/docs/react-native-ecommerce-starter/v4.0.0)
+
+**Quick links to Ecommerce Starter**
+
+-	*[Ecommerce Starter Features](http://strapmobile.com/docs/react-native-ecommerce-starter/v4.0.0/overview/whats-new-in-v4-0)*
+-	*[Ecommerce Starter Components](http://strapmobile.com/docs/react-native-ecommerce-starter/v4.0.0/components)*
+-	*[Ecommerce Starter Releases](http://strapmobile.com/docs/react-native-ecommerce-starter/v4.0.0/release-notes)*
+
+
+### Flat App Theme - v4.0.0
+
+Flat App is basically a style of interface design emphasizing minimum use of stylistic elements, typography and flat colors.
+
+Ready to use screens:
+
+-	UI Elements: Button with various shapes and themes, Textbox, Form Elements, List, Full fledged collection of Icons
+-	Custom Elements: Header, Footer, Drawer, Spinner, ProgressBar, Modal, Ready to use Email Template, Interactive design of Calendar with fast swiping feature, Scroll between the tabs, Responsive Navigator, Chat Messenger
+-	Ready to use screens: Channels, Stories, Comments, Carousel, etc
+-	Easy theme customization
+-	[Read More](http://strapmobile.com/docs/react-native-flat-app-theme/v4.0.0)
+
+**Quick links to Flat App Theme**
+
+-	*[Flat App Theme Features](http://strapmobile.com/docs/react-native-flat-app-theme/v4.0.0/overview/whats-new-in-v4-0)*
+-	*[Flat App Theme Components](http://strapmobile.com/docs/react-native-flat-app-theme/v4.0.0/components)*
+-	*[Flat App Theme Releases](http://strapmobile.com/docs/react-native-flat-app-theme/v4.0.0/release-notes)*
 
 

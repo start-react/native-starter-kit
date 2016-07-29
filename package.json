@@ -1,6 +1,6 @@
 {
     "name": "NativeStarterKit",
-    "version": "3.1.0",
+    "version": "4.0.0",
     "private": true,
     "scripts": {
         "postinstall": "remotedev-debugger",
@@ -9,9 +9,9 @@
     "dependencies": {
         "lodash": "^4.13.1",
         "moment": "^2.13.0",
-        "native-base": "0.4.7",
+        "native-base": "0.4.9",
         "react": "15.1.0",
-        "react-native": "^0.27.2",
+        "react-native": "0.27.2",
         "react-native-button": "^1.6.0",
         "react-native-code-push": "^1.12.1-beta",
         "react-native-easy-grid": "^0.1.6",
@@ -24,28 +24,40 @@
         "redux-thunk": "^2.1.0",
         "rx": "^4.1.0"
     },
+
     "devDependencies": {
+        "babel-eslint": "^6.0.5",
         "chai": "^3.5.0",
+        "eslint": "^2.13.1",
+        "eslint-config-airbnb": "^9.0.1",
+        "eslint-plugin-import": "^1.9.2",
+        "eslint-plugin-jsx-a11y": "^1.5.3",
+        "eslint-plugin-react": "^5.2.2",
+        "eslint-plugin-react-native": "^1.1.0-beta",
         "mocha": "^2.5.3",
         "remote-redux-devtools": "^0.3.3",
         "remote-redux-devtools-on-debugger": "^0.4.6",
         "remotedev-server": "^0.1.2"
     },
+
     "keywords": [
         "android",
-        "ios",
-        "react",
-        "native",
-        "react-native",
-        "native-modules",
-        "react-component",
-        "navbar",
-        "packager",
-        "rnpm",
         "es6",
+        "ios",
+        "navbar",
+        "native",
+        "native-base",
+        "native-base boilerplate",
+        "native-modules",
+        "packager",
+        "react",
+        "react-component",
+        "react-native",
         "react-native boilerplate",
-        "redux",
+        "react-native with native-base",
         "react-native with redux",
-        "react-native with redux boilerplate"
+        "react-native with redux boilerplate",
+        "redux",
+        "rnpm"
     ]
 }

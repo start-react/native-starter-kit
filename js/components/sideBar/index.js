@@ -4,11 +4,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {Content, Text, List, ListItem } from 'native-base';
 import { closeDrawer } from '../../actions/drawer';
 import { replaceOrPushRoute } from '../../actions/route';
 
-import styles from "./style";
+import {Content, Text, List, ListItem } from 'native-base';
+
+import styles from './style';
 
 class SideBar extends Component {
 
@@ -20,7 +21,7 @@ class SideBar extends Component {
     render(){
         return (
             <Content style={styles.sidebar} >
-                <List foregroundColor={"white"}>
+                <List foregroundColor={'white'}>
                     <ListItem onPress={() => this.navigateTo('home')} >
                         <Text>Home</Text>
                     </ListItem>

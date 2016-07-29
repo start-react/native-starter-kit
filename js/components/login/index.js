@@ -2,13 +2,14 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { DeviceEventEmitter, Dimensions, Image } from 'react-native';
+import { connect } from 'react-redux';
 
-import { Container, Content, InputGroup, Input, Button, Icon, View } from 'native-base';
 import { replaceRoute } from '../../actions/route';
 
-import theme from '../../themes/base-theme';
+import { Container, Content, InputGroup, Input, Button, Icon, View } from 'native-base';
+
+import myTheme from '../../themes/base-theme';
 import styles from './styles';
 
 class Login extends Component {
@@ -27,19 +28,19 @@ class Login extends Component {
 
     render() {
         return (
-            <Container theme={theme}>
+            <Container theme={myTheme}>
                 <View style={styles.container}>
                     <Content>
                         <Image source={require('../../../images/shadow.png')} style={styles.shadow}>
                             <View style={styles.bg}>
                                 <InputGroup style={styles.input}>
-                                    <Icon name="ios-person" />
-                                    <Input placeholder="EMAIL" />
+                                    <Icon name='ios-person' />
+                                    <Input placeholder='EMAIL' />
                                 </InputGroup>
                                 <InputGroup style={styles.input}>
-                                    <Icon name="ios-unlock-outline" />
+                                    <Icon name='ios-unlock-outline' />
                                     <Input
-                                        placeholder="PASSWORD"
+                                        placeholder='PASSWORD'
                                         secureTextEntry={true}
                                     />
                                 </InputGroup>

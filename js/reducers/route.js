@@ -3,7 +3,7 @@
 
 import type { Action } from '../actions/types';
 import { globalNav } from '../AppNavigator';
-import { POP_ROUTE, REPLACE_ROUTE, REPLACE_OR_PUSH_ROUTE } from '../actions/route';
+import { PUSH_NEW_ROUTE, POP_ROUTE, POP_TO_ROUTE, REPLACE_ROUTE, REPLACE_OR_PUSH_ROUTE } from '../actions/route';
 import { REHYDRATE } from 'redux-persist/constants'
 
 export type State = {
@@ -15,6 +15,13 @@ const initialState = {
 };
 
 export default function (state:State = initialState, action:Action): State {
+
+    if (action.type === PUSH_NEW_ROUTE) {
+        globalNav.navigator.push({id: action.route});
+        return {
+            routes: [...state.routes, action.route]
+        };
+    }
 
     if (action.type === REPLACE_ROUTE) {
         globalNav.navigator.replace({id: action.route});
@@ -57,6 +64,22 @@ export default function (state:State = initialState, action:Action): State {
         routes.pop();
         return {
             routes: routes
+        }
+    }
+
+    if (action.type === POP_TO_ROUTE) {
+        globalNav.navigator.popToRoute({id: action.route});
+        let routes = state.routes;
+        while (routes.pop() !== action.route) {}
+        return {
+            routes: [...routes, action.route]
+        }
+    }
+
+    if (action.type === REHYDRATE) {
+        const savedData = action['payload']['route'] || state;
+        return {
+            ...savedData
         }
     }
 
