@@ -1,6 +1,7 @@
 'use strict';
 
-import { AppRegistry } from 'react-native'
+import { AppRegistry, StatusBarIOS } from 'react-native'
 import setup from './js/setup'
 
-AppRegistry.registerComponent('ecommercenativebase', setup);
+StatusBarIOS.setStyle('light-content');
+AppRegistry.registerComponent('NativeStarterKit', setup);

@@ -10,8 +10,8 @@ module.exports = {
     brandWarning: "#f0ad4e",
     brandSidebar: "#252932",
 
-    inverseTextColor: "#fff",
-    textColor: "#000",
+    inverseTextColor: "#000",
+    textColor: "#fff",
 
     fontSizeBase: 15,
     titleFontSize: 17,
@@ -49,20 +49,20 @@ module.exports = {
 
     footerHeight: 55,
     toolbarHeight: (Platform.OS === 'ios' ) ? 70 : 55,
-    toolbarDefaultBg: "#00c497",
+    toolbarDefaultBg: "#322A2A",
     toolbarInverseBg: "#222",
 
-        tabBgColor: "#00c497",
-        tabTextColor: "#fff",
+    tabBgColor: "#00c497",
+    tabTextColor: "#fff",
 
-        btnDisabledBg: '#b5b5b5',
+    btnDisabledBg: '#b5b5b5',
     btnDisabledClr: '#f1f1f1',
 
-        cardDefaultBg: "#fff",
+    cardDefaultBg: "#fff",
 
-        get darkenHeader() {
-            return Color(this.tabBgColor).darken(0.03).hexString();
-        },
+    get darkenHeader() {
+        return Color(this.tabBgColor).darken(0.03).hexString();
+    },
     get btnPrimaryBg () {
         return this.brandPrimary;
     },
@@ -102,7 +102,7 @@ module.exports = {
     get inputColorPlaceholder () {
         return 'rgba(0, 0, 0, 0.7)';
     },
-    inputBorderColor: "#000",
+    inputBorderColor: "#fff",
     inputHeightBase: 40,
     inputGroupMarginBottom: 10,
     inputPaddingLeft: 5,
@@ -130,7 +130,7 @@ module.exports = {
     badgeColor: "#fff",
     badgeBg: "#ED1727",
 
-    lineHeight: 21,
+    lineHeight: (Platform.OS==='ios') ? 21 : 25,
 
     defaultSpinnerColor: "#45D56E",
     inverseSpinnerColor: "#1A191B",

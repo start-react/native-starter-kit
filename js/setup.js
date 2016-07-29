@@ -1,15 +1,12 @@
-/**
- * Created by kylefang on 4/27/16.
- * @flow
- */
 
 'use strict';
 
-import React, {Component} from 'React';
+import React, { Component } from 'React';
+import { StyleSheet, View } from 'react-native';
+import { Provider } from 'react-redux';
+
 import App from './App';
 import configureStore from './configureStore'
-import {Provider} from 'react-redux';
-import {StyleSheet, View, Text} from 'react-native';
 
 function setup():React.Component {
 

@@ -1,7 +1,3 @@
-/**
- * Created by kylefang on 4/27/16.
- * @flow
- */
 
 'use strict';
 

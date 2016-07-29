@@ -1,9 +1,8 @@
 'use strict';
 
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { View } from 'native-base';
-
 
 export default class SplashPage extends Component {
 
@@ -18,7 +17,6 @@ export default class SplashPage extends Component {
     render () {
         return (
             <View />
-
         );
     }
 }
