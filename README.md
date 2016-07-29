@@ -17,13 +17,13 @@ No need of reinventing the wheel. To have immediately something to continue buil
 
 This is a starter kit that you can install on the fly to get the basic plumping of React Native with NativeBase, Redux and CodePush. 
 
-*Find out more [Free React.js and React Native Themes at StartReact.com](http://www.startreact.com/).*
+*Find out more [Free React JS Themes](http://www.startreact.com/) and [React Native Themes]((http://www.startreact.com/).*
 
 # Content
 
 -	[Screens](#screens)
 -	[Technologies](#technologies)
--	[Installation](#installation)
+-	[Get Started](#get-started)
 -	[Featured Apps](#featured-apps)
 	-	[Native Starter Pro](#native-starter-pro---v400)
 	-	[Ecommerce Starter](#ecommerce-starter---v400)
@@ -104,7 +104,19 @@ Performance wise, Easy Grid is noteworthy and works as fine as Flexbox, not much
 [More Examples](http://nativebase.io/docs/v0.5.2/components#layout) . . .
 
 
-## Installation
+### [React Native-NativeBase Seed](https://github.com/GeekyAnts/react-native-native-base-seed)
+
+React Native-NativeBase Seed is a basic configuration that every React Native app must have; brought to you by [StrapMobile](http://strapmobile.com/).
+
+This is open source and perfect for any newbie to start with React Native.
+
+This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](http://nativebase.io/docs/v0.5.2/), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
+
+
+
+
+
+## Get Started
 
 ###1. System Requirements
 
@@ -198,7 +210,7 @@ Having tried with the free version, [Native Starter Kit](https://github.com/star
 
 Get on the mobile fast track with the featured apps of NativeBase, to build high-quality iOS and Android mobile apps. 
 
-Based on [React Native](https://facebook.github.io/react-native/) and [NativeBase](http://nativebase.io/docs/v0.4.6/), Native Starter Pro, Ecommerce Starter, Flat App Theme are beautifully designed with fusion of [Redux](https://github.com/reactjs/react-redux) and [ES6](http://es6-features.org/#Constants), responsive iOS and Android app source code to quickly get started on your next project. 
+Based on [React Native](https://facebook.github.io/react-native/) and [NativeBase](http://nativebase.io/docs/v0.5.2/), Native Starter Pro, Ecommerce Starter, Flat App Theme are beautifully designed with fusion of [Redux](https://github.com/reactjs/react-redux) and [ES6](http://es6-features.org/#Constants), responsive iOS and Android app source code to quickly get started on your next project. 
 
 
 ### Native Starter Pro - v4.0.0
@@ -215,8 +227,7 @@ Native Starter Pro includes following ready-to-use and highly customizable compo
 
 **Quick links to Native Starter Pro**
 
--	*[Native Starter Pro Features](http://strapmobile.com/docs/native-starter-pro/v4.0.0/overview/whats-new-in-v4-0)*
--	*[Native Starter Pro Components](http://strapmobile.com/docs/native-starter-pro/v4.0.0/components)*
+-	*[Native Starter Pro Components](http://strapmobile.com/docs/native-starter-pro/v4.0.0)*
 -	*[Native Starter Pro's App Generator](http://strapmobile.com/customizer/#/color)*
 -	*[Native Starter Pro Releases](http://strapmobile.com/native-starter-pro-releases/)*
 
@@ -236,9 +247,8 @@ Ready to use screens:
 
 **Quick links to Ecommerce Starter**
 
--	*[Ecommerce Starter Features](http://strapmobile.com/docs/react-native-ecommerce-starter/v4.0.0/overview/whats-new-in-v4-0)*
--	*[Ecommerce Starter Components](http://strapmobile.com/docs/react-native-ecommerce-starter/v4.0.0/components)*
--	*[Ecommerce Starter Releases](http://strapmobile.com/docs/react-native-ecommerce-starter/v4.0.0/release-notes)*
+-	*[Ecommerce Starter Components](http://strapmobile.com/docs/react-native-ecommerce-starter/v4.0.0)*
+-	*[Ecommerce Starter Releases](http://strapmobile.com/docs/react-native-ecommerce-starter/v4.0.0)*
 
 
 ### Flat App Theme - v4.0.0
@@ -255,8 +265,7 @@ Ready to use screens:
 
 **Quick links to Flat App Theme**
 
--	*[Flat App Theme Features](http://strapmobile.com/docs/react-native-flat-app-theme/v4.0.0/overview/whats-new-in-v4-0)*
--	*[Flat App Theme Components](http://strapmobile.com/docs/react-native-flat-app-theme/v4.0.0/components)*
--	*[Flat App Theme Releases](http://strapmobile.com/docs/react-native-flat-app-theme/v4.0.0/release-notes)*
+-	*[Flat App Theme Components](http://strapmobile.com/docs/react-native-flat-app-theme/v4.0.0)*
+-	*[Flat App Theme Releases](http://strapmobile.com/docs/react-native-flat-app-theme/v4.0.0)*
 
 
