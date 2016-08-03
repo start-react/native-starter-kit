@@ -26,5 +26,24 @@
     "mocha": "^2.5.3",
     "remote-redux-devtools": "^0.3.3",
     "remote-redux-devtools-on-debugger": "^0.4.6"
-  }
+  },
+  "keywords": [
+    "android",
+    "ios",
+    "react",
+    "native",
+    "react-native",
+    "native-modules",
+    "react-component",
+    "navbar",
+    "packager",
+    "rnpm",
+    "es6",
+    "react-native boilerplate",
+    "redux",
+    "react-native with redux",
+    "react-native with redux boilerplate",
+    "native-base boilerplate",
+    "react-native with native-base"
+  ]
 }
