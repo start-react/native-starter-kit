@@ -15,7 +15,6 @@
         "react-native-button": "^1.6.0",
         "react-native-code-push": "^1.12.1-beta",
         "react-native-easy-grid": "^0.1.6",
-        "react-native-gifted-spinner": "0.0.4",
         "react-native-modalbox": "^1.3.3",
         "react-native-vector-icons": "^2.0.3",
         "react-redux": "^4.4.5",
@@ -42,22 +41,23 @@
 
     "keywords": [
         "android",
-        "es6",
         "ios",
-        "navbar",
-        "native",
-        "native-base",
-        "native-base boilerplate",
-        "native-modules",
-        "packager",
         "react",
-        "react-component",
+        "native",
         "react-native",
+        "native-base",
+        "native-modules",
+        "react-component",
+        "navbar",
+        "packager",
+        "rnpm",
+        "es6",
+        "redux",
+        "react-native-code-push",
         "react-native boilerplate",
-        "react-native with native-base",
         "react-native with redux",
         "react-native with redux boilerplate",
-        "redux",
-        "rnpm"
+        "native-base boilerplate",
+        "react-native with native-base"
     ]
 }
