@@ -1,4 +1,4 @@
-# React Native-NativeBase Seed
+# React Native-NativeBase Seed v4.0.0
 
 React Native-NativeBase Seed is a basic configuration that every React Native app must have.
 
