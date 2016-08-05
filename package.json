@@ -7,6 +7,7 @@
         "start": "node_modules/react-native/packager/packager.sh"
     },
     "dependencies": {
+        "color": "~0.11.1",
         "lodash": "^4.13.1",
         "moment": "^2.13.0",
         "native-base": "0.4.9",
