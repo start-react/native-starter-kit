@@ -1,6 +1,6 @@
 {
   "name": "ReactNativeNativeBaseSeed",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": true,
   "scripts": {
     "postinstall": "remotedev-debugger",
@@ -9,9 +9,9 @@
   "dependencies": {
     "lodash": "^4.13.1",
     "moment": "^2.13.0",
-    "native-base": "0.4.9",
-    "react": "15.1.0",
-    "react-native": "0.27.2",
+    "native-base": "0.5.4",
+    "react": "15.2.1",
+    "react-native": "0.31.0",
     "react-native-code-push": "^1.12.1-beta",
     "react-native-modalbox": "^1.3.3",
     "react-native-vector-icons": "^2.0.3",

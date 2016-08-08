@@ -23,14 +23,14 @@ export default function (state:State = initialState, action:Action): State {
   // console.log(state, "route state *()*(*&77");
   if (action.type === PUSH_NEW_ROUTE) {
     // console.log(action.route, "route");
-    globalNav.navigator.push({id: action.route});
+    globalNav.navigator.push({id: action.route, passProps: action.passProps});
     return {
       routes: [...state.routes, action.route]
     };
   }
 
   if (action.type === REPLACE_ROUTE) {
-    globalNav.navigator.replaceWithAnimation({id: action.route});
+    globalNav.navigator.replaceWithAnimation({id: action.route, passProps: action.passProps});
     let routes = state.routes;
     routes.pop();
     return {
@@ -45,7 +45,7 @@ export default function (state:State = initialState, action:Action): State {
     if(routes[routes.length - 1] == 'home') {
       // If top route is home and user navigates to a route other than home, then push
       if(action.route != 'home')
-        globalNav.navigator.push({id: action.route});
+        globalNav.navigator.push({id: action.route, passProps: action.passProps});
 
       // If top route is home and user navigates to home, do nothing
       else 
@@ -54,11 +54,11 @@ export default function (state:State = initialState, action:Action): State {
 
     else {
       if(action.route == 'home') {
-        globalNav.navigator.resetTo({id: 'home'});
+        globalNav.navigator.resetTo({id: 'home', passProps: action.passProps});
         routes = [];
       }
       else {
-        globalNav.navigator.replaceWithAnimation({id: action.route});
+        globalNav.navigator.replaceWithAnimation({id: action.route, passProps: action.passProps});
         routes.pop();
       }
       
@@ -70,7 +70,7 @@ export default function (state:State = initialState, action:Action): State {
   }
 
   if (action.type === POP_ROUTE) {
-    globalNav.navigator.pop();
+    globalNav.navigator.pop({passProps: action.passProps});
     let routes = state.routes;
     routes.pop();
     return {
@@ -79,7 +79,7 @@ export default function (state:State = initialState, action:Action): State {
   }
 
   if (action.type === POP_TO_ROUTE) {
-    globalNav.navigator.popToRoute({id: action.route});
+    globalNav.navigator.popToRoute({id: action.route, passProps: action.passProps});
     let routes = state.routes;
     while (routes.pop() !== action.route) {}
     return {

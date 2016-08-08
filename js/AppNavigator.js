@@ -144,11 +144,11 @@ class AppNavigator extends Component {
     renderScene(route, navigator) {
         switch (route.id) {
             case 'splashscreen':
-                return <SplashPage navigator={navigator} />;
+                return <SplashPage navigator={navigator} {...route.passProps} />;
             case 'index':
-                return <Index navigator={navigator} />;
+                return <Index navigator={navigator} {...route.passProps} />;
             default :
-                return <Index navigator={navigator}  />;
+                return <Index navigator={navigator} {...route.passProps}  />;
         }
     }
 }
