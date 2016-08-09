@@ -122,9 +122,9 @@ This is a [React Native](https://github.com/facebook/react-native) Project with 
 
 * Globally installed [node](https://nodejs.org/en/) >= 4.0
 
-*	Globally installed [npm](https://www.npmjs.org/) >= 3.0
+* Globally installed [npm](https://www.npmjs.org/) >= 3.0
 
-*	Install [CodePush](https://microsoft.github.io/code-push/) globally and get keys for your app.
+* Install [CodePush](https://microsoft.github.io/code-push/) globally and get keys for your app.
 
 
 
