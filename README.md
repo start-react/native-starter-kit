@@ -25,8 +25,8 @@ This is a starter kit that you can install on the fly to get the basic plumping 
 -	[Technologies](#technologies)
 -	[Get Started](#get-started)
 -	[Featured Apps](#featured-apps)
-	-	[Native Starter Pro](#native-starter-pro---v400)
-	-	[Ecommerce Starter](#ecommerce-starter---v400)
+	-	[Native Starter Pro](#native-starter-pro---v500)
+	-	[Ecommerce Starter](#ecommerce-starter---v500)
 	-	[Flat App Theme](#flat-app-theme---v400)
 
 
