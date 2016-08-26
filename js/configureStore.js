@@ -16,9 +16,9 @@ export default function configureStore(onCompletion:()=>void):any {
 	     	name: 'NativeStarterKit', realtime: true
 	    }),
 	);
-	
+
 	let store = createStore(reducer, enhancer);
 	persistStore(store, {storage: AsyncStorage}, onCompletion);
-	
+
 	return store
 }

@@ -40,8 +40,14 @@
     <string/>
     <key>NSAppTransportSecurity</key>
     <dict>
-      <key>NSAllowsArbitraryLoads</key>
-      <true/>
+      <key>NSExceptionDomains</key>
+      <dict>
+        <key>localhost</key>
+        <dict>
+          <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+        </dict>
+      </dict>
     </dict>
     <key>UIAppFonts</key>
     <array>
@@ -53,6 +59,18 @@
       <string>MaterialIcons.ttf</string>
       <string>Octicons.ttf</string>
       <string>Zocial.ttf</string>
+      <string>Andale Mono.ttf</string>
+      <string>Arial Black.ttf</string>
+      <string>Arial.ttf</string>
+      <string>Comic Sans MS.ttf</string>
+      <string>Courier New.ttf</string>
+      <string>Georgia.ttf</string>
+      <string>Microsoft Sans Serif.ttf</string>
+      <string>Roboto_medium.ttf</string>
+      <string>Roboto.ttf</string>
+      <string>SF-UI-Text-Regular.otf</string>
+      <string>Skia.ttf</string>
+      <string>Times New Roman.ttf</string>
     </array>
   </dict>
 </plist>
