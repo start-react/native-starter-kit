@@ -179,7 +179,7 @@ $ react-native run-ios
 
 	*	Open file **/android/app/build.gradle**
 
-	*	Seacrh for **buildTypes** and add following lines of code
+	*	Search for **buildTypes** and add following lines of code
 
 ```sh
 .  .  .
