@@ -258,7 +258,7 @@ Ready to use screens:
 -	Fluid grid layout to advertise various brands for your products
 -	List-view and grid-view of product advertisements
 -	Product details in your cart
--	[Read More](http://strapmobile.com/docs/react-native-ecommerce-starter/v4.0.0)
+-	[Read More](http://strapmobile.com/docs/react-native-ecommerce-starter/v5.0.0)
 
 **Quick links to Ecommerce Starter**
 
