@@ -17,12 +17,12 @@ export default function configureStore(onCompletion:()=>void):any {
 	const enhancer = compose(
 		applyMiddleware(thunk, promise),
 		devTools({
-	      name: 'ecommerce', realtime: true
+	      name: 'rnnbseed', realtime: true
 	    }),
 	);
-	
+
 	let store = createStore(reducer, enhancer);
 	persistStore(store, {storage: AsyncStorage}, onCompletion);
-	
+
 	return store
 }

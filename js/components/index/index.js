@@ -28,8 +28,8 @@ class Index extends Component {
 
 function bindActions(dispatch){
     return {
-        replaceRoute:(route, passProps)=>dispatch(replaceRoute(route, passProps)),
-        pushNewRoute:(route, passProps)=>dispatch(pushNewRoute(route, passProps))
+        replaceRoute:(route)=>dispatch(replaceRoute(route)),
+        pushNewRoute:(route)=>dispatch(pushNewRoute(route))
     }
 }
 
