@@ -88,7 +88,7 @@ The CodePush plugin helps get product improvements in front of your end users in
 
 ### [Navigator](https://facebook.github.io/react-native/docs/navigator.html)
 
-Navigation is a core part of any application. Native Satrter Kit makes use of [React Native](https://github.com/facebook/react-native) <Navigator /> component to help with navigation.
+Navigation is a core part of any application. Native Starter Kit makes use of [React Native](https://github.com/facebook/react-native) <Navigator /> component to help with navigation.
 
 
 
