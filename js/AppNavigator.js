@@ -144,7 +144,6 @@ class AppNavigator extends Component {
 
 
   }
-
 }
 
 function bindAction(dispatch) {
