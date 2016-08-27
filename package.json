@@ -22,7 +22,11 @@
     "rx": "^4.1.0"
   },
   "devDependencies": {
+    "babel-eslint": "^6.1.2",
     "chai": "^3.5.0",
+    "eslint": "^3.3.1",
+    "eslint-plugin-react": "^6.1.2",
+    "eslint-plugin-react-native": "^2.0.0",
     "mocha": "^2.5.3",
     "remote-redux-devtools": "^0.3.3",
     "remote-redux-devtools-on-debugger": "^0.4.6"

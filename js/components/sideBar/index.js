@@ -5,19 +5,19 @@ import {closeDrawer} from '../../actions/drawer';
 import {replaceOrPushRoute} from '../../actions/route';
 
 class SideBar extends Component {
-    
-    render(){
-        return (
+
+  render(){
+    return (
           <View />
         );
-    }
+  }
 }
 
 function bindAction(dispatch) {
-    return {
-        closeDrawer: ()=>dispatch(closeDrawer()),
-        replaceOrPushRoute:(route)=>dispatch(replaceOrPushRoute(route))
-    }
+  return {
+    closeDrawer: ()=>dispatch(closeDrawer()),
+    replaceOrPushRoute: (route)=>dispatch(replaceOrPushRoute(route))
+  };
 }
 
 export default connect(null, bindAction)(SideBar);

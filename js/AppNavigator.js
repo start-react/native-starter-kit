@@ -6,7 +6,6 @@
 'use strict';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import _ from 'lodash/core';
 import {Drawer} from 'native-base';
 import {BackAndroid, Platform, StatusBar} from 'react-native';
 import {closeDrawer} from './actions/drawer';
@@ -16,7 +15,7 @@ import Navigator from 'Navigator';
 import Index from './components/index/';
 import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
-import { statusBarColor } from "./themes/base-theme";
+import {statusBarColor} from './themes/base-theme';
 
 
 Navigator.prototype.replaceWithAnimation = function (route) {
@@ -32,7 +31,7 @@ Navigator.prototype.replaceWithAnimation = function (route) {
   this._emitWillFocus(nextStack[destIndex]);
   this.setState({
     routeStack: nextStack,
-    sceneConfigStack: nextAnimationConfigStack,
+    sceneConfigStack: nextAnimationConfigStack
   }, () => {
     this._enableScene(destIndex);
     this._transitionTo(destIndex, nextSceneConfig.defaultTransitionVelocity, null, () => {
@@ -43,127 +42,123 @@ Navigator.prototype.replaceWithAnimation = function (route) {
 
 export var globalNav = {};
 
-const searchResultRegexp = /^search\/(.*)$/;
-
-const reducerCreate = params=>{
-    const defaultReducer = Reducer(params);
-    return (state, action)=>{
-        // console.log("ACTION:", action);
-        var currentState = state;
-
-        if(currentState){
-          while (currentState.children){
-            currentState = currentState.children[currentState.index]
-          }
-        }
-
-        return defaultReducer(state, action);
-    }
-};
-
-const drawerStyle  = { shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3};
 class AppNavigator extends Component {
-    constructor(props){
-        super(props);
 
-    }
+  static propTypes = {
+    routes: React.PropTypes.array,
+    drawerState: React.PropTypes.string,
+    closeDrawer: React.PropTypes.func,
+    popRoute: React.PropTypes.func
+  }
 
-    componentDidMount() {
-        globalNav.navigator = this._navigator;
-        // console.log(global.globalNav, "global nav");
+  constructor(props){
+    super(props);
 
-        this.props.store.subscribe(() => {
-            // console.log("store changed", this.props.store.getState());
-            if(this.props.store.getState().drawer.drawerState == 'opened')
-                this.openDrawer();
+  }
 
-            if(this.props.store.getState().drawer.drawerState == 'closed')
-                this._drawer.close();
-        });
+  componentDidMount() {
+    globalNav.navigator = this._navigator;
 
-        BackAndroid.addEventListener('hardwareBackPress', () => {
-            var routes = this._navigator.getCurrentRoutes();
+    BackAndroid.addEventListener('hardwareBackPress', () => {
+      var routes = this._navigator.getCurrentRoutes();
 
-            if(routes[routes.length - 1].id == 'home' || routes[routes.length - 1].id == 'login') {
+      if (routes[routes.length - 1].id === 'home' || routes[routes.length - 1].id === 'login') {
                 // CLose the app
-                return false;
-            }
-            else {
-                this.popRoute();
-                return true;
-            }
+        return false;
+      } else {
+        this.popRoute();
+        return true;
+      }
 
-        });
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.props.routes, 'wdwdwd');
+    if (this.props.drawerState === 'opened') {
+      this.openDrawer();
     }
 
-    popRoute() {
-        this.props.popRoute();
+    if (this.props.drawerState === 'closed') {
+      this._drawer.close();
     }
+  }
 
-    openDrawer() {
-        this._drawer.open();
+  popRoute() {
+    this.props.popRoute();
+  }
+
+  openDrawer() {
+    this._drawer.open();
+  }
+
+  closeDrawer() {
+    if (this.props.drawerState === 'opened') {
+      this._drawer.close();
+      this.props.closeDrawer();
     }
+  }
 
-    closeDrawer() {
-        if(this.props.store.getState().drawer.drawerState == 'opened') {
-            this._drawer.close();
-            this.props.closeDrawer();
-        }
+  renderScene(route, navigator) {
+    switch (route.id) {
+      case 'splashscreen':
+        return <SplashPage navigator={navigator} />;
+      case 'index':
+        return <Index navigator={navigator} />;
+      default :
+        return <Index navigator={navigator}  />;
     }
+  }
 
-    render() {
-        return (
+  render() {
+    return (
             <Drawer
-                ref={(ref) => this._drawer = ref}
+                ref={(ref) => {
+                  this._drawer = ref;
+                }}
                 type="overlay"
                 content={<SideBar navigator={this._navigator} />}
-                tapToClose={true}
+                tapToClose
                 acceptPan={false}
                 onClose={() => this.closeDrawer()}
                 openDrawerOffset={0.2}
                 panCloseMask={0.2}
-                negotiatePan={true}>
+                negotiatePan
+            >
                 <StatusBar
                     backgroundColor={statusBarColor}
                     barStyle="light-content"
                 />
                 <Navigator
-                    ref={(ref) => this._navigator = ref}
-                    configureScene={(route) => {
-                        return Navigator.SceneConfigs.FloatFromRight;
+                    ref={(ref) => {
+                      this._navigator = ref;
                     }}
-                    initialRoute={{id: (Platform.OS === "android") ? 'splashscreen' : 'index', statusBarHidden: true}}
+                    configureScene={(route) => {
+                      return Navigator.SceneConfigs.FloatFromRight;
+                    }}
+                    initialRoute={{id: (Platform.OS === 'android') ? 'splashscreen' : 'index', statusBarHidden: true}}
                     renderScene={this.renderScene}
-                  />
+                />
             </Drawer>
         );
 
 
-    }
+  }
 
-    renderScene(route, navigator) {
-        switch (route.id) {
-            case 'splashscreen':
-                return <SplashPage navigator={navigator} {...route.passProps} />;
-            case 'index':
-                return <Index navigator={navigator} {...route.passProps} />;
-            default :
-                return <Index navigator={navigator} {...route.passProps}  />;
-        }
-    }
 }
 
 function bindAction(dispatch) {
-    return {
-        closeDrawer: () => dispatch(closeDrawer()),
-        popRoute: () => dispatch(popRoute())
-    }
+  return {
+    closeDrawer: () => dispatch(closeDrawer()),
+    popRoute: () => dispatch(popRoute())
+  };
 }
 
 const mapStateToProps = (state) => {
   return {
-    drawerState: state.drawer.drawerState
-  }
-}
+    drawerState: state.drawer.drawerState,
+    routes: state.route.routes
+  };
+};
 
-export default connect(mapStateToProps, bindAction) (AppNavigator);
+export default connect(mapStateToProps, bindAction)(AppNavigator);
