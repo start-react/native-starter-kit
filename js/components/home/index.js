@@ -15,6 +15,7 @@ import styles from './styles';
 
 class Home extends Component {
 
+    
     replaceRoute(route) {
         this.props.replaceRoute(route);
     }
@@ -26,14 +27,14 @@ class Home extends Component {
                     <Button transparent onPress={() => this.replaceRoute('login')}>
                         <Icon name='ios-power' />
                     </Button>
-                    
-                    <Title>Home</Title>
-                    
+
+                    <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
+
                     <Button transparent onPress={this.props.openDrawer}>
                         <Icon name='ios-menu' />
                     </Button>
                 </Header>
-                
+
                 <Content>
                     <Grid style={{marginTop: 20}}>
                         <Row>
@@ -92,4 +93,10 @@ function bindAction(dispatch) {
     }
 }
 
-export default connect(null, bindAction)(Home);
+function mapStateToProps(state) {
+    return {
+        name: state.user.name,
+    };
+}
+
+export default connect(mapStateToProps, bindAction)(Home);

@@ -6,6 +6,7 @@ import { DeviceEventEmitter, Dimensions, Image } from 'react-native';
 import { connect } from 'react-redux';
 
 import { replaceRoute } from '../../actions/route';
+import { setUser } from '../../actions/user';
 
 import { Container, Content, InputGroup, Input, Button, Icon, View } from 'native-base';
 
@@ -18,15 +19,22 @@ class Login extends Component {
         super(props);
         this.state = {
             visibleHeight: Dimensions.get('window').height,
-            scroll: false
+            scroll: false,
+            name: ''
         };
     }
 
     replaceRoute(route) {
+        this.setUser(this.state.name);
         this.props.replaceRoute(route);
     }
 
+    setUser(name) {
+        this.props.setUser(name);
+    }
+
     render() {
+
         return (
             <Container theme={myTheme}>
                 <View style={styles.container}>
@@ -35,7 +43,7 @@ class Login extends Component {
                             <View style={styles.bg}>
                                 <InputGroup style={styles.input}>
                                     <Icon name='ios-person' />
-                                    <Input placeholder='EMAIL' />
+                                    <Input placeholder='EMAIL' onChangeText={(name) => this.setState({name})} />
                                 </InputGroup>
                                 <InputGroup style={styles.input}>
                                     <Icon name='ios-unlock-outline' />
@@ -44,7 +52,7 @@ class Login extends Component {
                                         secureTextEntry={true}
                                     />
                                 </InputGroup>
-                                <Button style={styles.btn} textStyle={{color: '#fff'}} onPress={() => this.replaceRoute('home')}>
+                                <Button style={styles.btn} textStyle={{color: '#fff'}} onPress={() => this.replaceRoute('home') }>
                                     Login
                                 </Button>
                             </View>
@@ -58,7 +66,8 @@ class Login extends Component {
 
 function bindActions(dispatch){
     return {
-        replaceRoute:(route)=>dispatch(replaceRoute(route))
+        replaceRoute:(route)=>dispatch(replaceRoute(route)),
+        setUser:(name)=>dispatch(setUser(name))
     }
 }
 
