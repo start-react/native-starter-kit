@@ -18,15 +18,18 @@ class BlankPage extends Component {
     }
 
     render() {
+
+        const { props: { name, index, list } } = this;
+
         return (
             <Container theme={myTheme} style={{backgroundColor: '#565051'}}>
                 <Header>
                     <Button transparent onPress={() => this.popRoute()}>
                         <Icon name='ios-arrow-back' />
                     </Button>
-                    
-                    <Title>Blank Page</Title>
-                    
+
+                    <Title>{(name) ? name : 'Blank Page'}</Title>
+
                     <Button transparent onPress={this.props.openDrawer}>
                         <Icon name='ios-menu' />
                     </Button>
@@ -34,7 +37,7 @@ class BlankPage extends Component {
 
                 <Content padder>
                     <Text>
-                        Create Something Awesome . . .
+                        { (!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
                     </Text>
                 </Content>
             </Container>
@@ -49,4 +52,12 @@ function bindAction(dispatch) {
     }
 }
 
-export default connect(null, bindAction)(BlankPage);
+function mapStateToProps(state) {
+    return {
+        name: state.user.name,
+        index: state.list.selectedIndex,
+        list: state.list.list
+    };
+}
+
+export default connect(mapStateToProps, bindAction)(BlankPage);

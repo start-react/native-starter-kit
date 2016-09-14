@@ -10,6 +10,7 @@ export type Action =
     | { type: 'OPEN_DRAWER'}
     | { type: 'CLOSE_DRAWER'}
     | { type: 'SET_USER', name: string}
+    | { type: 'SET_LIST', list: string}
 
 export type Dispatch = (action:Action | ThunkAction | PromiseAction | Array<Action>) => any;
 export type GetState = () => Object;

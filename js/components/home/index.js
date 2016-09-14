@@ -4,8 +4,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { openDrawer } from '../../actions/drawer';
-import { replaceRoute } from '../../actions/route';
+import { TouchableOpacity } from 'react-native';
+
+import { openDrawer, closeDrawer } from '../../actions/drawer';
+import { setIndex } from '../../actions/list';
+import { replaceRoute, replaceOrPushRoute } from '../../actions/route';
 
 import { Container, Header, Title, Content, View, Text, Button, Icon } from 'native-base';
 import { Grid, Col, Row } from 'react-native-easy-grid';
@@ -15,9 +18,15 @@ import styles from './styles';
 
 class Home extends Component {
 
-    
+
     replaceRoute(route) {
         this.props.replaceRoute(route);
+    }
+
+    navigateTo(route, index) {
+        this.props.closeDrawer();
+        this.props.setIndex(index);
+        this.props.replaceOrPushRoute(route);
     }
 
     render() {
@@ -37,48 +46,16 @@ class Home extends Component {
 
                 <Content>
                     <Grid style={{marginTop: 20}}>
-                        <Row>
-                            <View style={styles.row}>
-                                <Text style={styles.text}>
-                                    React Native starter kit
-                                </Text>
-                            </View>
-                        </Row>
-                        <Row>
-                            <View style={styles.row}>
-                                <Text style={styles.text}>
-                                    with RN Navigator
-                                </Text>
-                            </View>
-                        </Row>
-                        <Row>
-                            <View style={styles.row}>
-                                <Text style={styles.text}>
-                                    NB Easy Grid
-                                </Text>
-                            </View>
-                        </Row>
-                        <Row>
-                            <View style={styles.row}>
-                                <Text style={styles.text}>
-                                    NativeBase
-                                </Text>
-                            </View>
-                        </Row>
-                        <Row>
-                            <View style={styles.row}>
-                                <Text style={styles.text}>
-                                    CodePush
-                                </Text>
-                            </View>
-                        </Row>
-                        <Row>
-                            <View style={styles.row}>
-                                <Text style={styles.text}>
-                                    Redux
-                                </Text>
-                            </View>
-                        </Row>
+                        {this.props.list.map((item, i) =>
+                            <Row key={i}>
+                                <TouchableOpacity style={styles.row} onPress={() => this.navigateTo('blankPage', i)} >
+                                    <Text style={styles.text}>
+                                        {item}
+                                    </Text>
+                                </TouchableOpacity>
+                            </Row>
+                        )}
+
                     </Grid>
                 </Content>
             </Container>
@@ -89,13 +66,18 @@ class Home extends Component {
 function bindAction(dispatch) {
     return {
         openDrawer: ()=>dispatch(openDrawer()),
-        replaceRoute:(route)=>dispatch(replaceRoute(route))
+        closeDrawer: ()=>dispatch(closeDrawer()),
+        replaceRoute:(route)=>dispatch(replaceRoute(route)),
+        replaceOrPushRoute:(route)=>dispatch(replaceOrPushRoute(route)),
+        setIndex:(index)=>dispatch(setIndex(index))
+
     }
 }
 
 function mapStateToProps(state) {
     return {
         name: state.user.name,
+        list: state.list.list
     };
 }
 

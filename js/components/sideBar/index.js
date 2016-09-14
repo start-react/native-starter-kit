@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { closeDrawer } from '../../actions/drawer';
+import { setIndex } from '../../actions/list';
 import { replaceOrPushRoute } from '../../actions/route';
 
 import {Content, Text, List, ListItem } from 'native-base';
@@ -14,7 +15,8 @@ import styles from './style';
 class SideBar extends Component {
 
     navigateTo(route) {
-        this.props.closeDrawer(); 
+        this.props.closeDrawer();
+        this.props.setIndex(undefined);
         this.props.replaceOrPushRoute(route);
     }
 
@@ -22,10 +24,10 @@ class SideBar extends Component {
         return (
             <Content style={styles.sidebar} >
                 <List foregroundColor={'white'}>
-                    <ListItem onPress={() => this.navigateTo('home')} >
+                    <ListItem button onPress={() => this.navigateTo('home')} >
                         <Text>Home</Text>
                     </ListItem>
-                    <ListItem onPress={() => this.navigateTo('blankPage')} >
+                    <ListItem button onPress={() => this.navigateTo('blankPage')} >
                         <Text>Blank Page</Text>
                     </ListItem>
                 </List>
@@ -37,7 +39,8 @@ class SideBar extends Component {
 function bindAction(dispatch) {
     return {
         closeDrawer: ()=>dispatch(closeDrawer()),
-        replaceOrPushRoute:(route)=>dispatch(replaceOrPushRoute(route))
+        replaceOrPushRoute:(route)=>dispatch(replaceOrPushRoute(route)),
+        setIndex:(index)=>dispatch(setIndex(index))
     }
 }
 
