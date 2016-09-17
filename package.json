@@ -36,6 +36,7 @@
         "eslint-plugin-react": "^5.2.2",
         "eslint-plugin-react-native": "^1.1.0-beta",
         "mocha": "^2.5.3",
+        "redux-immutable-state-invariant": "^1.2.3",
         "remote-redux-devtools": "^0.3.3",
         "remote-redux-devtools-on-debugger": "^0.4.6",
         "remotedev-server": "^0.1.2"
