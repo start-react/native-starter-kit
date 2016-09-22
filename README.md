@@ -1,10 +1,10 @@
-# React Native-NativeBase Seed v4.0.0
+# React Native-NativeBase Seed v5.1.0
 
 React Native-NativeBase Seed is a basic configuration that every React Native app must have.
 
 This is open source and perfect for any newbie to start with React Native.
 
-This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](http://nativebase.io/docs/v0.5.2/), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
+This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](http://nativebase.io/docs/v0.5.7/), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
 
 
 ## Get Started
@@ -13,9 +13,14 @@ This is a [React Native](https://github.com/facebook/react-native) Project with 
 
 * Globally installed [node](https://nodejs.org/en/) >= 4.0
 
-*	Globally installed [npm](https://www.npmjs.org/) >= 3.0
+* Globally installed [npm](https://www.npmjs.org/) >= 3.0
 
-*	Install [CodePush](https://microsoft.github.io/code-push/) globally and get keys for your app.
+* Globally installed [rnpm](https://github.com/rnpm/rnpm) *(only if React Native version < 0.29)*
+
+* Globally installed [react-native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
+
+* Install [CodePush](https://microsoft.github.io/code-push/) globally and get keys for your app.
+
 
 ###2. Installation
 
@@ -31,8 +36,17 @@ npm install
 react-native upgrade
 
 react-native android
+```
+If React Native < 0.29
 
-rnpm link
+```sh
+$rnpm link
+```
+
+If React Native >= 0.29
+
+```sh
+$ react-native link
 ```
 
 While running `react-native android` do not overwrite `index.android.js` file.
