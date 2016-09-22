@@ -2,7 +2,6 @@
  * Created by kylefang on 4/28/16.
  */
 
-'use strict';
 
 function warn(error) {
   console.warn(error.message || error);

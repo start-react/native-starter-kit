@@ -1,6 +1,6 @@
 import color from 'color';
 
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 
 module.exports = {
   brandPrimary: '#428bca',
@@ -16,34 +16,34 @@ module.exports = {
   fontSizeBase: 15,
   titleFontSize: 17,
 
-  get fontSizeH1 () {
+  get fontSizeH1() {
     return this.fontSizeBase * 1.8;
   },
-  get fontSizeH2 () {
+  get fontSizeH2() {
     return this.fontSizeBase * 1.6;
   },
-  get fontSizeH3 () {
+  get fontSizeH3() {
     return this.fontSizeBase * 1.4;
   },
-  get btnTextSize () {
+  get btnTextSize() {
     return this.fontSizeBase * 1.1;
   },
-  get btnTextSizeLarge () {
+  get btnTextSizeLarge() {
     return this.fontSizeBase * 1.5;
   },
-  get btnTextSizeSmall () {
+  get btnTextSizeSmall() {
     return this.fontSizeBase * 0.8;
   },
-  get iconSizeLarge () {
+  get iconSizeLarge() {
     return this.iconFontSize * 1.5;
   },
-  get iconSizeSmall () {
+  get iconSizeSmall() {
     return this.iconFontSize * 0.6;
   },
 
   borderRadiusBase: 4,
 
-  get borderRadiusLarge () {
+  get borderRadiusLarge() {
     return this.fontSizeBase * 3.8;
   },
 
@@ -63,50 +63,50 @@ module.exports = {
   get darkenHeader() {
     return color(this.tabBgColor).darken(0.03).hexString();
   },
-  get btnPrimaryBg () {
+  get btnPrimaryBg() {
     return this.brandPrimary;
   },
-  get btnPrimaryColor () {
+  get btnPrimaryColor() {
     return this.inverseTextColor;
   },
-  get btnSuccessBg () {
+  get btnSuccessBg() {
     return this.brandSuccess;
   },
-  get btnSuccessColor () {
+  get btnSuccessColor() {
     return this.inverseTextColor;
   },
-  get btnDangerBg () {
+  get btnDangerBg() {
     return this.brandDanger;
   },
-  get btnDangerColor () {
+  get btnDangerColor() {
     return this.inverseTextColor;
   },
-  get btnInfoBg () {
+  get btnInfoBg() {
     return this.brandInfo;
   },
-  get btnInfoColor () {
+  get btnInfoColor() {
     return this.inverseTextColor;
   },
-  get btnWarningBg () {
+  get btnWarningBg() {
     return this.brandWarning;
   },
-  get btnWarningColor () {
+  get btnWarningColor() {
     return this.inverseTextColor;
   },
 
   borderWidth: 1,
 
-  get inputColor () {
+  get inputColor() {
     return this.textColor;
   },
-  get inputColorPlaceholder () {
+  get inputColorPlaceholder() {
     return 'rgba(0, 0, 0, 0.7)';
   },
   inputBorderColor: '#000',
   inputHeightBase: 40,
   inputGroupMarginBottom: 10,
   inputPaddingLeft: 5,
-  get inputPaddingLeftIcon () {
+  get inputPaddingLeftIcon() {
     return this.inputPaddingLeft * 8;
   },
 
@@ -136,5 +136,5 @@ module.exports = {
   inverseSpinnerColor: '#1A191B',
 
   defaultProgressColor: '#E4202D',
-  inverseProgressColor: '#1A191B'
+  inverseProgressColor: '#1A191B',
 };

@@ -3,19 +3,17 @@
  * @flow
  */
 
-'use strict';
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Drawer} from 'native-base';
-import {BackAndroid, Platform, StatusBar} from 'react-native';
-import {closeDrawer} from './actions/drawer';
-import {popRoute} from './actions/route';
-import Navigator from 'Navigator';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Drawer } from 'native-base';
+import { BackAndroid, Platform, StatusBar, Navigator } from 'react-native';
+import { closeDrawer } from './actions/drawer';
+import { popRoute } from './actions/route';
 
 import Index from './components/index/';
 import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
-import {statusBarColor} from './themes/base-theme';
+import { statusBarColor } from './themes/base-theme';
 
 
 Navigator.prototype.replaceWithAnimation = function (route) {
@@ -31,7 +29,7 @@ Navigator.prototype.replaceWithAnimation = function (route) {
   this._emitWillFocus(nextStack[destIndex]);
   this.setState({
     routeStack: nextStack,
-    sceneConfigStack: nextAnimationConfigStack
+    sceneConfigStack: nextAnimationConfigStack,
   }, () => {
     this._enableScene(destIndex);
     this._transitionTo(destIndex, nextSceneConfig.defaultTransitionVelocity, null, () => {
@@ -40,41 +38,46 @@ Navigator.prototype.replaceWithAnimation = function (route) {
   });
 };
 
-export var globalNav = {};
+export const globalNav = {};
 
 class AppNavigator extends Component {
 
   static propTypes = {
-    routes: React.PropTypes.array,
+    routes: React.PropTypes.Array,
     drawerState: React.PropTypes.string,
     closeDrawer: React.PropTypes.func,
-    popRoute: React.PropTypes.func
+    popRoute: React.PropTypes.func,
   }
 
-  constructor(props){
-    super(props);
-
+  static renderScene(route, navigator) {
+    switch (route.id) {
+      case 'splashscreen':
+        return <SplashPage navigator={navigator} />;
+      case 'index':
+        return <Index navigator={navigator} />;
+      default :
+        return <Index navigator={navigator} />;
+    }
   }
+
 
   componentDidMount() {
     globalNav.navigator = this._navigator;
 
     BackAndroid.addEventListener('hardwareBackPress', () => {
-      var routes = this._navigator.getCurrentRoutes();
+      const routes = this._navigator.getCurrentRoutes();
 
       if (routes[routes.length - 1].id === 'home' || routes[routes.length - 1].id === 'login') {
                 // CLose the app
         return false;
-      } else {
-        this.popRoute();
-        return true;
       }
-
+      this.popRoute();
+      return true;
     });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log(this.props.routes, 'wdwdwd');
+  componentDidUpdate() {
+    // console.log(this.props.routes, 'wdwdwd');
     if (this.props.drawerState === 'opened') {
       this.openDrawer();
     }
@@ -99,64 +102,49 @@ class AppNavigator extends Component {
     }
   }
 
-  renderScene(route, navigator) {
-    switch (route.id) {
-      case 'splashscreen':
-        return <SplashPage navigator={navigator} />;
-      case 'index':
-        return <Index navigator={navigator} />;
-      default :
-        return <Index navigator={navigator}  />;
-    }
-  }
-
   render() {
     return (
-            <Drawer
-                ref={(ref) => {
-                  this._drawer = ref;
-                }}
-                type="overlay"
-                content={<SideBar navigator={this._navigator} />}
-                tapToClose
-                acceptPan={false}
-                onClose={() => this.closeDrawer()}
-                openDrawerOffset={0.2}
-                panCloseMask={0.2}
-                negotiatePan
-            >
-                <StatusBar
-                    backgroundColor={statusBarColor}
-                    barStyle="light-content"
-                />
-                <Navigator
-                    ref={(ref) => {
-                      this._navigator = ref;
-                    }}
-                    configureScene={(route) => {
-                      return Navigator.SceneConfigs.FloatFromRight;
-                    }}
-                    initialRoute={{id: (Platform.OS === 'android') ? 'splashscreen' : 'index', statusBarHidden: true}}
-                    renderScene={this.renderScene}
-                />
-            </Drawer>
+      <Drawer
+        ref={(ref) => {
+          this._drawer = ref;
+        }}
+        type="overlay"
+        content={<SideBar navigator={this._navigator} />}
+        tapToClose
+        acceptPan={false}
+        onClose={() => this.closeDrawer()}
+        openDrawerOffset={0.2}
+        panCloseMask={0.2}
+        negotiatePan
+      >
+        <StatusBar
+          backgroundColor={statusBarColor}
+          barStyle="light-content"
+        />
+        <Navigator
+          ref={(ref) => {
+            this._navigator = ref;
+          }}
+          configureScene={() => Navigator.SceneConfigs.FloatFromRight}
+          initialRoute={{ id: (Platform.OS === 'android') ? 'splashscreen' : 'index', statusBarHidden: true }}
+          renderScene={this.renderScene}
+        />
+      </Drawer>
         );
-
-
   }
 }
 
 function bindAction(dispatch) {
   return {
     closeDrawer: () => dispatch(closeDrawer()),
-    popRoute: () => dispatch(popRoute())
+    popRoute: () => dispatch(popRoute()),
   };
 }
 
 const mapStateToProps = (state) => {
   return {
     drawerState: state.drawer.drawerState,
-    routes: state.route.routes
+    routes: state.route.routes,
   };
 };
 
