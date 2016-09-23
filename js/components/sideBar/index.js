@@ -10,14 +10,14 @@ class SideBar extends Component {
     replaceRoute: React.PropTypes.func,
   }
 
-  static render() {
+  replaceRoute() {
+    this.props.replaceRoute();
+  }
+
+  render() {  // eslint-disable-line class-methods-use-this
     return (
       <View />
       );
-  }
-
-  replaceRoute() {
-    this.props.replaceRoute();
   }
 }
 

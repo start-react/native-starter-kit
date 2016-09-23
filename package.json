@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "postinstall": "remotedev-debugger",
-    "start": "node_modules/react-native/packager/packager.sh"
+    "start": "node_modules/react-native/packager/packager.sh",
+    "eslint": "eslint"
   },
   "dependencies": {
     "color": "^0.11.3",

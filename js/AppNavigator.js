@@ -16,7 +16,7 @@ import SideBar from './components/sideBar';
 import { statusBarColor } from './themes/base-theme';
 
 
-Navigator.prototype.replaceWithAnimation = function (route) {
+Navigator.prototype.replaceWithAnimation = function replaceWithAnimation(route) {
   const activeLength = this.state.presentedIndex + 1;
   const activeStack = this.state.routeStack.slice(0, activeLength);
   const activeAnimationConfigStack = this.state.sceneConfigStack.slice(0, activeLength);
@@ -43,23 +43,10 @@ export const globalNav = {};
 class AppNavigator extends Component {
 
   static propTypes = {
-    routes: React.PropTypes.Array,
     drawerState: React.PropTypes.string,
     closeDrawer: React.PropTypes.func,
     popRoute: React.PropTypes.func,
   }
-
-  static renderScene(route, navigator) {
-    switch (route.id) {
-      case 'splashscreen':
-        return <SplashPage navigator={navigator} />;
-      case 'index':
-        return <Index navigator={navigator} />;
-      default :
-        return <Index navigator={navigator} />;
-    }
-  }
-
 
   componentDidMount() {
     globalNav.navigator = this._navigator;
@@ -102,6 +89,17 @@ class AppNavigator extends Component {
     }
   }
 
+  renderScene(route, navigator) {  // eslint-disable-line class-methods-use-this
+    switch (route.id) {
+      case 'splashscreen':
+        return <SplashPage navigator={navigator} />;
+      case 'index':
+        return <Index navigator={navigator} />;
+      default :
+        return <Index navigator={navigator} />;
+    }
+  }
+
   render() {
     return (
       <Drawer
@@ -141,11 +139,8 @@ function bindAction(dispatch) {
   };
 }
 
-const mapStateToProps = (state) => {
-  return {
-    drawerState: state.drawer.drawerState,
-    routes: state.route.routes,
-  };
-};
+const mapStateToProps = state => ({
+  drawerState: state.drawer.drawerState,
+});
 
 export default connect(mapStateToProps, bindAction)(AppNavigator);

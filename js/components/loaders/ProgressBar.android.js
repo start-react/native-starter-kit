@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import ProgressBar from 'ProgressBarAndroid';
+import ProgressBarAndroid from 'react-native';
 import NativeBaseComponent from 'native-base/Components/Base/NativeBaseComponent';
 import computeProps from 'native-base/Utils/computeProps';
 
@@ -33,7 +33,7 @@ export default class SpinnerNB extends NativeBaseComponent {
     };
 
     return (
-      <ProgressBar
+      <ProgressBarAndroid
         {...this.prepareRootProps()}
         styleAttr="Horizontal"
         indeterminate={false}

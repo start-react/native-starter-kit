@@ -16,20 +16,20 @@ class Index extends Component {
     replaceRoute: React.PropTypes.func,
   }
 
-  static render() {
+  replaceRoute() {
+    this.props.replaceRoute();
+  }
+
+  render() {  // eslint-disable-line class-methods-use-this
     return (
       <Container theme={myTheme}>
         <Content>
-          <Text style={{ marginTop: 180, marginLeft: 22, fontSize: 22, fontWeight: 'bold ' }}>
+          <Text style={{ marginTop: 180, marginLeft: 22, fontSize: 22, fontWeight: 'bold' }}>
             React Native - NativeBase Seed
           </Text>
         </Content>
       </Container>
     );
-  }
-
-  replaceRoute() {
-    this.props.replaceRoute();
   }
 }
 

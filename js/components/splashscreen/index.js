@@ -5,15 +5,8 @@ import { View } from 'native-base';
 
 export default class SplashPage extends Component {
 
-
-  static render() {
-    return (
-      <View />
-    );
-  }
-
-  propTypes = {
-    navigator: React.PropTypes.Object,
+  static propTypes = {
+    navigator: React.PropTypes.shape({}),
   }
 
   componentWillMount() {
@@ -23,5 +16,12 @@ export default class SplashPage extends Component {
         id: 'index',
       });
     }, 1500);
+  }
+
+
+  render() { // eslint-disable-line class-methods-use-this
+    return (
+      <View />
+    );
   }
 }
