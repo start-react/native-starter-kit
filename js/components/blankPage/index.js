@@ -1,63 +1,66 @@
 
-'use strict';
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
 
 import { openDrawer } from '../../actions/drawer';
 import { popRoute } from '../../actions/route';
-
-import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
-
-import myTheme from '../../themes/base-theme';
+import styles from './styles';
 
 class BlankPage extends Component {
 
-    popRoute() {
-        this.props.popRoute();
-    }
+  static propTypes = {
+    popRoute: React.PropTypes.func,
+    openDrawer: React.PropTypes.func,
+    name: React.PropTypes.string,
+    index: React.PropTypes.number,
+    list: React.PropTypes.arrayOf(React.PropTypes.string),
+  }
 
-    render() {
+  popRoute() {
+    this.props.popRoute();
+  }
 
-        const { props: { name, index, list } } = this;
+  render() {
+    const { props: { name, index, list } } = this;
 
-        return (
-            <Container theme={myTheme} style={{backgroundColor: '#565051'}}>
-                <Header>
-                    <Button transparent onPress={() => this.popRoute()}>
-                        <Icon name='ios-arrow-back' />
-                    </Button>
+    return (
+      <Container style={styles.container}>
+        <Header>
+          <Button transparent onPress={() => this.popRoute()}>
+            <Icon name="ios-arrow-back" />
+          </Button>
 
-                    <Title>{(name) ? name : 'Blank Page'}</Title>
+          <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
 
-                    <Button transparent onPress={this.props.openDrawer}>
-                        <Icon name='ios-menu' />
-                    </Button>
-                </Header>
+          <Button transparent onPress={this.props.openDrawer}>
+            <Icon name="ios-menu" />
+          </Button>
+        </Header>
 
-                <Content padder>
-                    <Text>
-                        { (!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
-                    </Text>
-                </Content>
-            </Container>
-        )
-    }
+        <Content padder>
+          <Text>
+            { (!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
+          </Text>
+        </Content>
+      </Container>
+    );
+  }
 }
 
 function bindAction(dispatch) {
-    return {
-        openDrawer: ()=>dispatch(openDrawer()),
-        popRoute: () => dispatch(popRoute())
-    }
+  return {
+    openDrawer: () => dispatch(openDrawer()),
+    popRoute: () => dispatch(popRoute()),
+  };
 }
 
 function mapStateToProps(state) {
-    return {
-        name: state.user.name,
-        index: state.list.selectedIndex,
-        list: state.list.list
-    };
+  return {
+    name: state.user.name,
+    index: state.list.selectedIndex,
+    list: state.list.list,
+  };
 }
 
 export default connect(mapStateToProps, bindAction)(BlankPage);

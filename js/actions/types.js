@@ -1,6 +1,4 @@
 
-'use strict';
-
 export type Action =
   { type: 'PUSH_NEW_ROUTE', route: string }
     | { type: 'POP_ROUTE' }
@@ -12,7 +10,7 @@ export type Action =
     | { type: 'SET_USER', name: string}
     | { type: 'SET_LIST', list: string}
 
-export type Dispatch = (action:Action | ThunkAction | PromiseAction | Array<Action>) => any;
 export type GetState = () => Object;
-export type ThunkAction = (dispatch:Dispatch, getState:GetState) => any;
 export type PromiseAction = Promise<Action>;
+export type Dispatch = (action:Action | PromiseAction | Array<Action>) => any;
+export type ThunkAction = (dispatch:Dispatch, getState:GetState) => any;

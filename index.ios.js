@@ -1,7 +1,6 @@
-'use strict';
 
-import { AppRegistry, StatusBar } from 'react-native'
-import setup from './js/setup'
+import { AppRegistry, StatusBar } from 'react-native';
+import setup from './js/setup';
 
-StatusBar.setBarStyle('light-content');
+StatusBar.setBarStyle('default');
 AppRegistry.registerComponent('NativeStarterKit', setup);
