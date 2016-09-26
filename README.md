@@ -21,7 +21,7 @@ This is a starter kit that you can install on the fly to get the basic plumping 
 
 # Content
 
--	[Screens](#screens)
+<!-- -	[Screens](#screens) -->
 -	[Technologies](#technologies)
 -	[Get Started](#get-started)
 -	[Featured Apps](#featured-apps)
@@ -30,11 +30,11 @@ This is a starter kit that you can install on the fly to get the basic plumping 
 	-	[Flat App Theme](#flat-app-theme---v400)
 
 
-## Screens
+<!-- ## Screens
 
  iOS | Android
  :--:| :-----:
- ![ios-demo](/Screenshots/ios-demo.gif) | ![android-demo](/Screenshots/android-demo.gif)
+ ![ios-demo](/Screenshots/ios-demo.gif) | ![android-demo](/Screenshots/android-demo.gif) -->
 
 
 ## Technologies
