@@ -52,7 +52,10 @@ class Home extends Component {
           <Grid style={styles.mt}>
             {this.props.list.map((item, i) =>
               <Row key={i}>
-                <TouchableOpacity style={styles.row} onPress={() => this.navigateTo('blankPage', i)} >
+                <TouchableOpacity
+                  style={styles.row}
+                  onPress={() => this.navigateTo('blankPage', i)}
+                >
                   <Text style={styles.text}>{item}</Text>
                 </TouchableOpacity>
               </Row>

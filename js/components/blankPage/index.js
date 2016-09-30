@@ -40,7 +40,7 @@ class BlankPage extends Component {
 
         <Content padder>
           <Text>
-            { (!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
+            {(!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
           </Text>
         </Content>
       </Container>
