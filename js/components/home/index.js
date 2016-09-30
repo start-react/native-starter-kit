@@ -6,7 +6,7 @@ import { Container, Header, Title, Content, Text, Button, Icon } from 'native-ba
 import { Grid, Row } from 'react-native-easy-grid';
 
 import { openDrawer, closeDrawer } from '../../actions/drawer';
-import { replaceRoute, replaceOrPushRoute } from '../../actions/route';
+import { replaceRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route';
 import { setIndex } from '../../actions/list';
 import myTheme from '../../themes/base-theme';
 import styles from './styles';
@@ -18,6 +18,7 @@ class Home extends Component {
     closeDrawer: React.PropTypes.func,
     replaceRoute: React.PropTypes.func,
     replaceOrPushRoute: React.PropTypes.func,
+    pushNewRoute: React.PropTypes.func,
     setIndex: React.PropTypes.func,
     name: React.PropTypes.string,
     list: React.PropTypes.arrayOf(React.PropTypes.string),
@@ -27,10 +28,9 @@ class Home extends Component {
     this.props.replaceRoute(route);
   }
 
-  navigateTo(route, index) {
-    this.props.closeDrawer();
+  pushNewRoute(route, index) {
     this.props.setIndex(index);
-    this.props.replaceOrPushRoute(route);
+    this.props.pushNewRoute(route);
   }
 
   render() {
@@ -54,7 +54,7 @@ class Home extends Component {
               <Row key={i}>
                 <TouchableOpacity
                   style={styles.row}
-                  onPress={() => this.navigateTo('blankPage', i)}
+                  onPress={() => this.pushNewRoute('blankPage', i)}
                 >
                   <Text style={styles.text}>{item}</Text>
                 </TouchableOpacity>
@@ -70,9 +70,8 @@ class Home extends Component {
 function bindAction(dispatch) {
   return {
     openDrawer: () => dispatch(openDrawer()),
-    closeDrawer: () => dispatch(closeDrawer()),
     replaceRoute: route => dispatch(replaceRoute(route)),
-    replaceOrPushRoute: route => dispatch(replaceOrPushRoute(route)),
+    pushNewRoute: route => dispatch(pushNewRoute(route)),
     setIndex: index => dispatch(setIndex(index)),
   };
 }
