@@ -191,12 +191,12 @@ $ react-native run-ios
 .  .  .
 buildTypes {
     release {
-        buildConfigField "String", "CODEPUSH_KEY", "codepush production key"
+        buildConfigField "String", "CODEPUSH_KEY", '"codepush_production_key"'
         .  .  .
     }
 
     debug {
-        buildConfigField "String", "CODEPUSH_KEY", "codepush staging key"
+        buildConfigField "String", "CODEPUSH_KEY", '"codepush_staging_key"'
     }
 }
 .  .  .
