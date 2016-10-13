@@ -133,7 +133,7 @@ This is a [React Native](https://github.com/facebook/react-native) Project with 
 On the command prompt run the following commands
 
 ```sh
-$ git clone https://github.com/start-react/native-starter-kit.git
+$ git clone git@github.com:start-react/native-starter-kit.git
 
 $ cd native-starter-kit/
 
