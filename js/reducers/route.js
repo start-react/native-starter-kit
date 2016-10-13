@@ -29,7 +29,7 @@ export default function (state:State = initialState, action:Action): State {
   }
 
   if (action.type === REPLACE_ROUTE) {
-    globalNav.navigator.replaceWithAnimation({ id: action.route });
+    globalNav.navigator.replace({ id: action.route });
     const routes = state.routes;
     routes.pop();
     return {
