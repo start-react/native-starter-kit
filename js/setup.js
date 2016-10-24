@@ -1,8 +1,3 @@
-/**
- * Created by kylefang on 4/27/16.
- * @flow
- */
-
 
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';

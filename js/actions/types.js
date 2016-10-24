@@ -1,8 +1,3 @@
-/**
- * Created by kylefang on 4/27/16.
- * @flow
- */
-
 
 export type Action =
   { type: 'PUSH_NEW_ROUTE', route: string }
@@ -15,5 +10,4 @@ export type Action =
 
 export type Dispatch = (action:Action | Array<Action>) => any;
 export type GetState = () => Object;
-export type ThunkAction = (dispatch:Dispatch, getState:GetState) => any;
 export type PromiseAction = Promise<Action>;

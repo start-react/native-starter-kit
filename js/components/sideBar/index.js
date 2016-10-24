@@ -1,17 +1,17 @@
+
 import React, { Component } from 'react';
-import { View } from 'native-base';
 import { connect } from 'react-redux';
-import { closeDrawer } from '../../actions/drawer';
-import { replaceOrPushRoute } from '../../actions/route';
+import { View } from 'native-base';
+
+import navigateTo from '../../actions/sideBarNav';
 
 class SideBar extends Component {
 
   static propTypes = {
-    replaceRoute: React.PropTypes.func,
+    navigateTo: React.PropTypes.func,
   }
-
-  replaceRoute() {
-    this.props.replaceRoute();
+  navigateTo(route) {
+    this.props.navigateTo(route, 'index');
   }
 
   render() {  // eslint-disable-line class-methods-use-this
@@ -23,9 +23,12 @@ class SideBar extends Component {
 
 function bindAction(dispatch) {
   return {
-    closeDrawer: () => dispatch(closeDrawer()),
-    replaceOrPushRoute: route => dispatch(replaceOrPushRoute(route)),
+    navigateTo: (route, homeRoute) => dispatch(navigateTo(route, homeRoute)),
   };
 }
 
-export default connect(null, bindAction)(SideBar);
+const mapStateToProps = state => ({
+  navigation: state.cardNavigation,
+});
+
+export default connect(mapStateToProps, bindAction)(SideBar);

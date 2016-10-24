@@ -1,23 +1,32 @@
 
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { actions } from 'react-native-navigation-redux-helpers';
 import { Container, Content, Text } from 'native-base';
-
-import { pushNewRoute, replaceRoute } from '../../actions/route';
-
 
 import myTheme from '../../themes/base-theme';
 
+const {
+  pushRoute,
+  replaceAt,
+} = actions;
 
 class Index extends Component {
 
   static propTypes = {
-    replaceRoute: React.PropTypes.func,
+    replaceAt: React.PropTypes.func,
+    pushRoute: React.PropTypes.func,
+    navigation: React.PropTypes.shape({
+      key: React.PropTypes.string,
+    }),
   }
 
-  replaceRoute() {
-    this.props.replaceRoute();
+  replaceAt(route) {
+    this.props.replaceAt('index', { key: route }, this.props.navigation.key);
+  }
+
+  pushRoute(route) {
+    this.props.pushRoute({ key: route, index: 1 }, this.props.navigation.key);
   }
 
   render() {  // eslint-disable-line class-methods-use-this
@@ -33,12 +42,15 @@ class Index extends Component {
   }
 }
 
-
 function bindActions(dispatch) {
   return {
-    replaceRoute: route => dispatch(replaceRoute(route)),
-    pushNewRoute: route => dispatch(pushNewRoute(route)),
+    replaceAt: (routeKey, route, key) => dispatch(replaceAt(routeKey, route, key)),
+    pushRoute: (route, key) => dispatch(pushRoute(route, key)),
   };
 }
 
-export default connect(null, bindActions)(Index);
+const mapStateToProps = state => ({
+  navigation: state.cardNavigation,
+});
+
+export default connect(mapStateToProps, bindActions)(Index);

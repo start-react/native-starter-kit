@@ -1,7 +1,3 @@
-/**
- * Created by kylefang on 4/28/16.
- */
-
 
 function warn(error) {
   throw error; // To let the caller handle the rejection

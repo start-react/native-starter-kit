@@ -1,7 +1,3 @@
-/**
- * Created by kylefang on 4/30/16.
- * @flow
- */
 
 import type { Action } from './types';
 

@@ -1,8 +1,3 @@
-/**
- * Created by kylefang on 4/27/16.
- * @flow
- */
-
 
 import { persistStore } from 'redux-persist';
 import { AsyncStorage } from 'react-native';
@@ -16,7 +11,7 @@ export default function configureStore(onCompletion:()=>void):any {
   const enhancer = compose(
     applyMiddleware(thunk, promise),
     devTools({
-      name: 'rnnbseed', realtime: true,
+      name: 'ReactNativeNativeBaseSeed', realtime: true,
     }),
   );
 
