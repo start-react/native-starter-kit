@@ -51,7 +51,7 @@ $ react-native link
 
 While running `react-native android` do not overwrite `index.android.js` file.
 
-[CodePush](https://github.com/Microsoft/react-native-code-push) plugin installation and key deployment
+[CodePush](https://github.com/Microsoft/react-native-code-push) plugin installation and key deployment.
 
 
 ###3. Simulate for iOS
