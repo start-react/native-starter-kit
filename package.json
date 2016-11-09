@@ -1,6 +1,6 @@
 {
   "name": "NativeStarterKit",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "private": true,
   "scripts": {
     "postinstall": "remotedev-debugger && sh .add-pre-commit-hook",
@@ -57,5 +57,6 @@
     "react-native with redux boilerplate",
     "native-base boilerplate",
     "react-native with native-base"
-  ]
+  ],
+  "upstreamRepo": "git@github.com:GeekyAnts/react-native-native-base-seed.git",
 }
