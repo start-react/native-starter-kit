@@ -17,6 +17,6 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
   },
   mt: {
-    marginTop: 20,
+    marginTop: 18,
   },
 });

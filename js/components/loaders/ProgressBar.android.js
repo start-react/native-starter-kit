@@ -1,6 +1,7 @@
+/* @flow */
 
 import React from 'react';
-import { ProgressBarAndroid } from 'react-native';
+import ProgressBarAndroid from 'react-native';
 import NativeBaseComponent from 'native-base/Components/Base/NativeBaseComponent';
 import computeProps from 'native-base/Utils/computeProps';
 
@@ -39,7 +40,6 @@ export default class SpinnerNB extends NativeBaseComponent {
         progress={this.props.progress ? this.props.progress / 100 : 0.5}
         color={getColor()}
       />
-        );
+    );
   }
-
 }

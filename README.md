@@ -1,7 +1,7 @@
 
-## Native Starter Kit v5.2.0
+## Native Starter Kit v5.2.1
 
-### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
+### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
 
 *Brought to you by [StrapMobile](http://strapmobile.com/)*
 
@@ -11,7 +11,7 @@
 ![Native-Starter-Kit](/Screenshots/logo.png)
 
 
-#### A simple starter project for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Redux](http://redux.js.org) + [React Native Navigator](https://facebook.github.io/react-native/docs/navigator.html) + [CodePush](https://github.com/Microsoft/react-native-code-push) apps on iOS and Android.
+#### A simple starter project for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) apps on iOS and Android.
 
 No need of reinventing the wheel. To have immediately something to continue building on, it would be best to start from some starter kit for getting React Native - based applications off the ground in a hurry.
 
@@ -82,9 +82,9 @@ The CodePush plugin helps get product improvements in front of your end users in
 
 
 
-### [Navigator](https://facebook.github.io/react-native/docs/navigator.html)
+### [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental)
 
-Navigation is a core part of any application. Native Starter Kit makes use of [React Native](https://github.com/facebook/react-native) <Navigator /> component to help with navigation.
+NavigationExperimental allows any view to act as a navigation view and using reducers to manipulate state at a top-level object.
 
 
 
@@ -106,10 +106,7 @@ React Native-NativeBase Seed is a basic configuration that every React Native ap
 
 This is open source and perfect for any newbie to start with React Native.
 
-This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](http://nativebase.io/docs/v0.5.7/), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
-
-
-
+This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](http://nativebase.io/documentation), [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
 
 
 ## Get Started
@@ -125,7 +122,6 @@ This is a [React Native](https://github.com/facebook/react-native) Project with 
 * Globally installed [react-native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
 
 * Install [CodePush](https://microsoft.github.io/code-push/) globally and get keys for your app.
-
 
 
 ###2. Installation
@@ -152,21 +148,14 @@ If React Native >= 0.29
 $ react-native link
 ```
 
+[CodePush](https://github.com/Microsoft/react-native-code-push) plugin installation and key deployment.
+
+
 ###3. Simulate for iOS
 
 **Method One**
 
 *	Open the project in XCode from **ios/NativeStarterKit.xcodeproj**
-
-*	[CodePush](https://github.com/Microsoft/react-native-code-push) plugin installation:
-
-*	CodePush key deployment
-
-	*	Go to **"Build Settings"** and search for keyword - **codepush**.
-
-	*	Add the **codepush production key** in place of **Release key**
-
-	*	Add the **codepush staging key** in place of **Debug key**
 
 *	Hit the play button.
 
@@ -180,27 +169,6 @@ $ react-native run-ios
 ```
 
 ###4. Simulate for Android
-
-*	Codepush key deployment
-
-	*	Open file **/android/app/build.gradle**
-
-	*	Search for **buildTypes** and add following lines of code
-
-```sh
-.  .  .
-buildTypes {
-    release {
-        buildConfigField "String", "CODEPUSH_KEY", '"codepush_production_key"'
-        .  .  .
-    }
-
-    debug {
-        buildConfigField "String", "CODEPUSH_KEY", '"codepush_staging_key"'
-    }
-}
-.  .  .
-```
 
 *	Make sure you have an **Android emulator** installed and running.
 

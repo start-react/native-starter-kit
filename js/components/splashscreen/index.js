@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
-import { View } from 'native-base';
+import { Image } from 'react-native';
+
+const launchscreen = require('../../../images/shadow.png');
 
 export default class SplashPage extends Component {
 
@@ -12,14 +14,14 @@ export default class SplashPage extends Component {
     const navigator = this.props.navigator;
     setTimeout(() => {
       navigator.replace({
-        id: 'index',
+        id: 'login',
       });
     }, 1500);
   }
 
   render() { // eslint-disable-line class-methods-use-this
     return (
-      <View />
+      <Image source={launchscreen} style={{ flex: 1, height: null, width: null }} />
     );
   }
 }

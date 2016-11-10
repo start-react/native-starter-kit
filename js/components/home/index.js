@@ -2,42 +2,44 @@
 import React, { Component } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
+import { actions } from 'react-native-navigation-redux-helpers';
 import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
 import { Grid, Row } from 'react-native-easy-grid';
 
-import { openDrawer, closeDrawer } from '../../actions/drawer';
-import { replaceRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route';
+import { openDrawer } from '../../actions/drawer';
 import { setIndex } from '../../actions/list';
 import myTheme from '../../themes/base-theme';
 import styles from './styles';
 
+const {
+  reset,
+  pushRoute,
+} = actions;
+
 class Home extends Component {
 
   static propTypes = {
-    openDrawer: React.PropTypes.func,
-    closeDrawer: React.PropTypes.func,
-    replaceRoute: React.PropTypes.func,
-    replaceOrPushRoute: React.PropTypes.func,
-    pushNewRoute: React.PropTypes.func,
-    setIndex: React.PropTypes.func,
     name: React.PropTypes.string,
     list: React.PropTypes.arrayOf(React.PropTypes.string),
+    setIndex: React.PropTypes.func,
+    openDrawer: React.PropTypes.func,
+    pushRoute: React.PropTypes.func,
+    reset: React.PropTypes.func,
+    navigation: React.PropTypes.shape({
+      key: React.PropTypes.string,
+    }),
   }
 
-  replaceRoute(route) {
-    this.props.replaceRoute(route);
-  }
-
-  pushNewRoute(route, index) {
+  pushRoute(route, index) {
     this.props.setIndex(index);
-    this.props.pushNewRoute(route);
+    this.props.pushRoute({ key: route, index: 1 }, this.props.navigation.key);
   }
 
   render() {
     return (
       <Container theme={myTheme} style={styles.container}>
         <Header>
-          <Button transparent onPress={() => this.replaceRoute('login')}>
+          <Button transparent onPress={() => this.props.reset(this.props.navigation.key)}>
             <Icon name="ios-power" />
           </Button>
 
@@ -54,7 +56,7 @@ class Home extends Component {
               <Row key={i}>
                 <TouchableOpacity
                   style={styles.row}
-                  onPress={() => this.pushNewRoute('blankPage', i)}
+                  onPress={() => this.pushRoute('blankPage', i)}
                 >
                   <Text style={styles.text}>{item}</Text>
                 </TouchableOpacity>
@@ -69,18 +71,17 @@ class Home extends Component {
 
 function bindAction(dispatch) {
   return {
-    openDrawer: () => dispatch(openDrawer()),
-    replaceRoute: route => dispatch(replaceRoute(route)),
-    pushNewRoute: route => dispatch(pushNewRoute(route)),
     setIndex: index => dispatch(setIndex(index)),
+    openDrawer: () => dispatch(openDrawer()),
+    pushRoute: (route, key) => dispatch(pushRoute(route, key)),
+    reset: key => dispatch(reset([{ key: 'login' }], key, 0)),
   };
 }
 
-function mapStateToProps(state) {
-  return {
-    name: state.user.name,
-    list: state.list.list,
-  };
-}
+const mapStateToProps = state => ({
+  name: state.user.name,
+  list: state.list.list,
+  navigation: state.cardNavigation,
+});
 
 export default connect(mapStateToProps, bindAction)(Home);
