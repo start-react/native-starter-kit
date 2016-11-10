@@ -6,6 +6,7 @@ import { Content, Text, List, ListItem } from 'native-base';
 import { setIndex } from '../../actions/list';
 import navigateTo from '../../actions/sideBarNav';
 import myTheme from '../../themes/base-theme';
+
 import styles from './style';
 
 class SideBar extends Component {

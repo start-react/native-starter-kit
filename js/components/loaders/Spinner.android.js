@@ -37,6 +37,7 @@ export default class SpinnerNB extends NativeBaseComponent {
         styleAttr={this.props.size ? this.props.size : 'Large'}
         color={getColor()}
       />
-    );
+        );
   }
+
 }
