@@ -28,10 +28,11 @@ This is a starter kit that you can install on the fly to get the basic plumping 
 
 ## Screens
 
- iOS | Android
+ <!-- iOS | Android
  :--:| :-----:
- ![ios-demo](/Screenshots/iOS/demo.gif) | ![android-demo](/Screenshots/android/demo.gif)
+ ![ios-demo](/Screenshots/iOS/demo.gif) | ![android-demo](/Screenshots/android/demo.gif) -->
 
+ ![ios-demo](/Screenshots/iOS/demo.gif)
 
 ## Technologies
 *Technologies used in Native Starter Kit*
