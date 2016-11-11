@@ -92,7 +92,7 @@ class AppNavigator extends Component {
         ref={(ref) => { this._drawer = ref; }}
         type="overlay"
         tweenDuration={150}
-        content={<SideBar navigator={this._navigator} />}
+        content={<SideBar />}
         tapToClose
         acceptPan={false}
         onClose={() => this.closeDrawer()}
