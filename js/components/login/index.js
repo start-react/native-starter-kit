@@ -7,6 +7,7 @@ import { Container, Content, InputGroup, Input, Button, Icon, View } from 'nativ
 import { replaceRoute } from '../../actions/route';
 import { setUser } from '../../actions/user';
 import styles from './styles';
+import I18n from '../../../i18n';
 
 const background = require('../../../images/shadow.png');
 
@@ -42,17 +43,20 @@ class Login extends Component {
               <View style={styles.bg}>
                 <InputGroup style={styles.input}>
                   <Icon name="ios-person" />
-                  <Input placeholder="EMAIL" onChangeText={name => this.setState({ name })} />
+                  <Input
+                    placeholder={I18n.t('LOGIN.EMAIL.PLACEHOLDER')}
+                    onChangeText={name => this.setState({ name })}
+                  />
                 </InputGroup>
                 <InputGroup style={styles.input}>
                   <Icon name="ios-unlock-outline" />
                   <Input
-                    placeholder="PASSWORD"
+                    placeholder={I18n.t('LOGIN.PASSWORD.PLACEHOLDER')}
                     secureTextEntry
                   />
                 </InputGroup>
                 <Button style={styles.btn} onPress={() => this.replaceRoute('home')}>
-                  Login
+                  {I18n.t('LOGIN.LOGIN_BUTTON')}
                 </Button>
               </View>
             </Image>

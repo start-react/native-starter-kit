@@ -6,6 +6,7 @@ import { Container, Header, Title, Content, Text, Button, Icon } from 'native-ba
 import { openDrawer } from '../../actions/drawer';
 import { popRoute } from '../../actions/route';
 import styles from './styles';
+import I18n from '../../../i18n';
 
 class BlankPage extends Component {
 
@@ -31,7 +32,7 @@ class BlankPage extends Component {
             <Icon name="ios-arrow-back" />
           </Button>
 
-          <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
+          <Title>{(name) ? this.props.name : I18n.t('BLANKPAGE.TITLE')}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
@@ -40,7 +41,7 @@ class BlankPage extends Component {
 
         <Content padder>
           <Text>
-            {(!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
+            {(!isNaN(index)) ? list[index] : I18n.t('BLANKPAGE.BODY_CONTENT')}
           </Text>
         </Content>
       </Container>

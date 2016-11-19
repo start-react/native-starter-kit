@@ -10,6 +10,7 @@ import { replaceRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/ro
 import { setIndex } from '../../actions/list';
 import myTheme from '../../themes/base-theme';
 import styles from './styles';
+import I18n from '../../../i18n';
 
 class Home extends Component {
 
@@ -41,7 +42,7 @@ class Home extends Component {
             <Icon name="ios-power" />
           </Button>
 
-          <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
+          <Title>{(this.props.name) ? this.props.name : I18n.t('HOME.TITLE')}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
