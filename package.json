@@ -3,7 +3,7 @@
   "version": "5.2.1",
   "private": true,
   "scripts": {
-    "postinstall": "remotedev-debugger && sh .add-pre-commit-hook",
+    "postinstall": "remotedev-debugger",
     "start": "node_modules/react-native/packager/packager.sh",
     "eslint": "eslint",
     "test": "jest"
