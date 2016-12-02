@@ -132,7 +132,7 @@ class AppNavigator extends Component {
 function bindAction(dispatch) {
   return {
     closeDrawer: () => dispatch(closeDrawer()),
-    popRoute: () => dispatch(popRoute()),
+    popRoute: key => dispatch(popRoute(key)),
   };
 }
 
