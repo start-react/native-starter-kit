@@ -1,4 +1,4 @@
-rootProject.name = 'NativeStarterKit'
+rootProject.name = 'NativebaseKitchenSink'
 
 include ':app'
 include ':react-native-vector-icons'

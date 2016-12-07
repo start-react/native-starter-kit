@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Image } from 'react-native';
 
-const launchscreen = require('../../../images/shadow.png');
+const splashscreen = require('../../../img/splashscreen.png');
 
 export default class SplashPage extends Component {
 
@@ -14,14 +14,14 @@ export default class SplashPage extends Component {
     const navigator = this.props.navigator;
     setTimeout(() => {
       navigator.replace({
-        id: 'login',
+        id: 'home',
       });
     }, 1500);
   }
 
   render() { // eslint-disable-line class-methods-use-this
     return (
-      <Image source={launchscreen} style={{ flex: 1, height: null, width: null }} />
+      <Image source={splashscreen} style={{ flex: 1, height: null, width: null }} />
     );
   }
 }

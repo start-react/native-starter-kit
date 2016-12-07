@@ -7,12 +7,39 @@ import { actions } from 'react-native-navigation-redux-helpers';
 
 import { closeDrawer } from './actions/drawer';
 
-import Login from './components/login/';
 import Home from './components/home/';
-import BlankPage from './components/blankPage';
+import Anatomy from './components/anatomy/';
+import NHBadge from './components/badge/';
+import NHButton from './components/button/';
+import NHCard from './components/card/';
+import NHCardImage from './components/card/card-image';
+import NHCardShowcase from './components/card/card-showcase';
+import NHCardList from './components/card/card-list';
+import NHCardHeaderAndFooter from './components/card/card-header-and-footer';
+import NHCheckbox from './components/checkbox/';
+import NHDeckSwiper from './components/deckswiper/';
+import NHFab from './components/fab/';
+import NHForm from './components/form/';
+import NHIcon from './components/icon/';
+import NHInputGroup from './components/inputgroup/';
+import NHLayout from './components/layout/';
+import NHList from './components/list/';
+import NHBasicList from './components/list/basic-list';
+import NHListDivider from './components/list/list-divider';
+import NHListIcon from './components/list/list-icon';
+import NHListAvatar from './components/list/list-avatar';
+import NHListThumbnail from './components/list/list-thumbnail';
+import NHRadio from './components/radio/';
+import NHSearchbar from './components/searchbar/';
+import NHSpinner from './components/spinner/';
+import NHPicker from './components/picker/';
+import NHTabs from './components/tabs/';
+import NHTab from './components/tab/';
+import NHThumbnail from './components/thumbnail/';
+import NHTypography from './components/typography/';
 import SplashPage from './components/splashscreen/';
-import SideBar from './components/sideBar';
-import { statusBarColor } from './themes/base-theme';
+import SideBar from './components/sidebar';
+import statusBarColor from './themes/base-theme';
 
 const {
   popRoute,
@@ -38,7 +65,7 @@ class AppNavigator extends Component {
     BackAndroid.addEventListener('hardwareBackPress', () => {
       const routes = this.props.navigation.routes;
 
-      if (routes[routes.length - 1].key === 'home' || routes[routes.length - 1].key === 'login') {
+      if (routes[routes.length - 1].key === 'home') {
         return false;
       }
 
@@ -75,14 +102,68 @@ class AppNavigator extends Component {
     switch (props.scene.route.key) {
       case 'splashscreen':
         return <SplashPage />;
-      case 'login':
-        return <Login />;
       case 'home':
         return <Home />;
-      case 'blankPage':
-        return <BlankPage />;
+      case 'anatomy':
+        return <Anatomy />;
+      case 'badge':
+        return <NHBadge />;
+      case 'button':
+        return <NHButton />;
+      case 'card':
+        return <NHCard />;
+      case 'cardImage':
+        return <NHCardImage />;
+      case 'cardShowcase':
+        return <NHCardShowcase />;
+      case 'cardList':
+        return <NHCardList />;
+      case 'cardHeaderAndFooter':
+        return <NHCardHeaderAndFooter />;
+      case 'checkbox':
+        return <NHCheckbox />;
+      case 'deckswiper':
+        return <NHDeckSwiper />;
+      case 'fab':
+        return <NHFab />;
+      case 'form':
+        return <NHForm />;
+      case 'icon':
+        return <NHIcon />;
+      case 'inputgroup':
+        return <NHInputGroup />;
+      case 'layout':
+        return <NHLayout />;
+      case 'list':
+        return <NHList />;
+      case 'basicList':
+        return <NHBasicList />;
+      case 'listDivider':
+        return <NHListDivider />;
+      case 'listIcon':
+        return <NHListIcon />;
+      case 'listAvatar':
+        return <NHListAvatar />;
+      case 'listThumbnail':
+        return <NHListThumbnail />;
+      case 'picker':
+        return <NHPicker />;
+      case 'radio':
+        return <NHRadio />;
+      case 'searchbar':
+        return <NHSearchbar />;
+      case 'spinner':
+        return <NHSpinner />;
+      case 'tab':
+        return <NHTab />;
+      case 'tabs':
+        return <NHTabs />;
+      case 'thumbnail':
+        return <NHThumbnail />;
+      case 'typography':
+        return <NHTypography />;
       default :
-        return <Login />;
+        return <Home />;
     }
   }
 
@@ -105,7 +186,7 @@ class AppNavigator extends Component {
             shadowRadius: 3,
           },
         }}
-        tweenHandler={(ratio) => {  //eslint-disable-line
+        tweenHandler={(ratio) => {  // eslint-disable-line
           return {
             drawer: { shadowRadius: ratio < 0.2 ? ratio * 5 * 5 : 5 },
             main: {
@@ -116,7 +197,7 @@ class AppNavigator extends Component {
         negotiatePan
       >
         <StatusBar
-          backgroundColor={statusBarColor}
+          backgroundColor={statusBarColor.statusBarColor}
           barStyle="default"
         />
         <NavigationCardStack
@@ -129,12 +210,10 @@ class AppNavigator extends Component {
   }
 }
 
-function bindAction(dispatch) {
-  return {
-    closeDrawer: () => dispatch(closeDrawer()),
-    popRoute: () => dispatch(popRoute()),
-  };
-}
+const bindAction = dispatch => ({
+  closeDrawer: () => dispatch(closeDrawer()),
+  popRoute: key => dispatch(popRoute(key)),
+});
 
 const mapStateToProps = state => ({
   drawerState: state.drawer.drawerState,

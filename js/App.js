@@ -73,42 +73,16 @@ class App extends Component {
               ref={(c) => { this._modal = c; }}
               swipeToClose={false}
             >
-              <View
-                style={{ flex: 1, alignSelf: 'stretch', justifyContent: 'center', padding: 20 }}
-              >
+              <View style={{ flex: 1, alignSelf: 'stretch', justifyContent: 'center', padding: 20 }}>
                 {this.state.showInstalling ?
-                  <Text
-                    style={{
-                      color: theme.brandPrimary,
-                      textAlign: 'center',
-                      marginBottom: 15,
-                      fontSize: 15,
-                    }}
-                  >
+                  <Text style={{ color: theme.brandPrimary, textAlign: 'center', marginBottom: 15, fontSize: 15 }}>
                     Installing update...
                   </Text> :
-                  <View
-                    style={{
-                      flex: 1,
-                      alignSelf: 'stretch',
-                      justifyContent: 'center',
-                      padding: 20,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        color: theme.brandPrimary,
-                        textAlign: 'center',
-                        marginBottom: 15,
-                        fontSize: 15,
-                      }}
-                    >
+                  <View style={{ flex: 1, alignSelf: 'stretch', justifyContent: 'center', padding: 20 }}>
+                    <Text style={{ color: theme.brandPrimary, textAlign: 'center', marginBottom: 15, fontSize: 15 }}>
                       Downloading update... {`${parseInt(this.state.downloadProgress, 10)} %`}
                     </Text>
-                    <ProgressBar
-                      color="theme.brandPrimary"
-                      progress={parseInt(this.state.downloadProgress, 10)}
-                    />
+                    <ProgressBar color="theme.brandPrimary" progress={parseInt(this.state.downloadProgress, 10)} />
                   </View>
                 }
               </View>
