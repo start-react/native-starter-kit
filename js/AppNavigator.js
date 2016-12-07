@@ -175,7 +175,6 @@ class AppNavigator extends Component {
         tweenDuration={150}
         content={<SideBar navigator={this._navigator} />}
         tapToClose
-        acceptPan={false}
         onClose={() => this.closeDrawer()}
         openDrawerOffset={0.2}
         panCloseMask={0.2}
@@ -194,7 +193,6 @@ class AppNavigator extends Component {
             },
           };
         }}
-        negotiatePan
       >
         <StatusBar
           backgroundColor={statusBarColor.statusBarColor}
