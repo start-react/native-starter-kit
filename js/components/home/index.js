@@ -1,55 +1,87 @@
 
 import React, { Component } from 'react';
-import { Image, View } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { Container, Button, H3,Text } from 'native-base';
+import { actions } from 'react-native-navigation-redux-helpers';
+import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
+import { Grid, Row } from 'react-native-easy-grid';
 
 import { openDrawer } from '../../actions/drawer';
+import { setIndex } from '../../actions/list';
+import myTheme from '../../themes/base-theme';
 import styles from './styles';
 
-const launchscreenBg = require('../../../img/launchscreen-bg.png');
-const launchscreenLogo = require('../../../img/logo-kitchen-sink.png');
+const {
+  reset,
+  pushRoute,
+} = actions;
 
-class Home extends Component { // eslint-disable-line
+class Home extends Component {
 
   static propTypes = {
+    name: React.PropTypes.string,
+    list: React.PropTypes.arrayOf(React.PropTypes.string),
+    setIndex: React.PropTypes.func,
     openDrawer: React.PropTypes.func,
+    pushRoute: React.PropTypes.func,
+    reset: React.PropTypes.func,
+    navigation: React.PropTypes.shape({
+      key: React.PropTypes.string,
+    }),
+  }
+
+  pushRoute(route, index) {
+    this.props.setIndex(index);
+    this.props.pushRoute({ key: route, index: 1 }, this.props.navigation.key);
   }
 
   render() {
     return (
-      <Container>
-        <Image source={launchscreenBg} style={styles.imageContainer}>
-          <View style={styles.logoContainer}>
-            <Image source={launchscreenLogo} style={styles.logo} />
-          </View>
-          <View style={{ alignItems: 'center', marginBottom: 50, backgroundColor: 'transparent' }}>
-            <H3 style={styles.text}>App to showcase</H3>
-            <View style={{ marginTop: 8 }} />
-            <H3 style={styles.text}>NativeBase components</H3>
-          </View>
-          <View style={{marginBottom: 80}}>
-            <Button
-              style={{ backgroundColor: '#6FAF98', alignSelf: 'center' }}
-              onPress={this.props.openDrawer}
-            >
-                <Text>Lets Go!</Text>
-            </Button>
-          </View>
-        </Image>
+      <Container theme={myTheme} style={styles.container}>
+        <Header>
+          <Button transparent onPress={() => this.props.reset(this.props.navigation.key)}>
+            <Icon name="ios-power" />
+          </Button>
+
+          <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
+
+          <Button transparent onPress={this.props.openDrawer}>
+            <Icon name="ios-menu" />
+          </Button>
+        </Header>
+
+        <Content>
+          <Grid style={styles.mt}>
+            {this.props.list.map((item, i) =>
+              <Row key={i}>
+                <TouchableOpacity
+                  style={styles.row}
+                  onPress={() => this.pushRoute('blankPage', i)}
+                >
+                  <Text style={styles.text}>{item}</Text>
+                </TouchableOpacity>
+              </Row>
+            )}
+          </Grid>
+        </Content>
       </Container>
     );
   }
 }
 
-function bindActions(dispatch) {
+function bindAction(dispatch) {
   return {
+    setIndex: index => dispatch(setIndex(index)),
     openDrawer: () => dispatch(openDrawer()),
+    pushRoute: (route, key) => dispatch(pushRoute(route, key)),
+    reset: key => dispatch(reset([{ key: 'login' }], key, 0)),
   };
 }
 
 const mapStateToProps = state => ({
+  name: state.user.name,
+  list: state.list.list,
   navigation: state.cardNavigation,
 });
 
-export default connect(mapStateToProps, bindActions)(Home);
+export default connect(mapStateToProps, bindAction)(Home);

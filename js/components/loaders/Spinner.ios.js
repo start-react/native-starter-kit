@@ -1,9 +1,12 @@
+/* @flow */
 
-import React, { Component } from 'react';
+import React from 'react';
 import { ActivityIndicatorIOS } from 'react-native';
+import NativeBaseComponent from 'native-base/Components/Base/NativeBaseComponent';
+import computeProps from 'native-base/Utils/computeProps';
 
 
-export default class SpinnerNB extends Component {
+export default class SpinnerNB extends NativeBaseComponent {
 
   prepareRootProps() {
     const type = {

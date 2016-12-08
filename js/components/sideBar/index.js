@@ -1,153 +1,19 @@
 
 import React, { Component } from 'react';
-import { Image, View } from 'react-native';
 import { connect } from 'react-redux';
-import { Content, Text, List, ListItem, Icon } from 'native-base';
+import { Content, Text, List, ListItem } from 'native-base';
 
+import { setIndex } from '../../actions/list';
 import navigateTo from '../../actions/sideBarNav';
+import myTheme from '../../themes/base-theme';
+
 import styles from './style';
 
-const drawerCover = require('../../../img/drawer-cover.png');
-
-const drawerImage = require('../../../img/logo-kitchen-sink.png');
-
-const data = [
-  {
-    name: 'Anatomy',
-    route: 'anatomy',
-    icon: 'ios-phone-portrait-outline',
-    bg: '#0209D8',
-  },
-  {
-    name: 'Badge',
-    route: 'badge',
-    icon: 'ios-notifications-outline',
-    bg: '#4DCAE0',
-  },
-  {
-    name: 'Button',
-    route: 'button',
-    icon: 'md-radio-button-off',
-    bg: '#5cb85c',
-  },
-  {
-    name: 'Card',
-    route: 'card',
-    icon: 'ios-keypad',
-    bg: '#877CA6',
-  },
-  {
-    name: 'Check Box',
-    route: 'checkbox',
-    icon: 'ios-checkmark-circle-outline',
-    bg: '#EB6B23',
-  },
-  {
-    name: 'Deck Swiper',
-    route: 'deckswiper',
-    icon: 'ios-swap',
-    bg: '#3591FA',
-  },
-  {
-    name: 'Fab',
-    route: 'fab',
-    icon: 'ios-help-buoy',
-    bg: '#5067FF',
-  },
-  {
-    name: 'Form',
-    route: 'form',
-    icon: 'ios-call',
-    bg: '#F5BF35',
-  },
-  {
-    name: 'Icon',
-    route: 'icon',
-    icon: 'ios-information-circle-outline',
-    bg: '#B63A48',
-  },
-  {
-    name: 'InputGroup',
-    route: 'inputgroup',
-    icon: 'ios-document-outline',
-    bg: '#00C497',
-  },
-  {
-    name: 'Layout',
-    route: 'layout',
-    icon: 'ios-grid-outline',
-    bg: '#5C4196',
-  },
-  {
-    name: 'List',
-    route: 'list',
-    icon: 'ios-lock',
-    bg: '#00AFC1',
-  },
-  {
-    name: 'Picker',
-    route: 'picker',
-    icon: 'ios-arrow-dropdown',
-    bg: '#F50C75',
-  },
-  {
-    name: 'Radio',
-    route: 'radio',
-    icon: 'ios-radio-button-on',
-    bg: '#6FEA90',
-  },
-  {
-    name: 'SearchBar',
-    route: 'searchbar',
-    icon: 'ios-search',
-    bg: '#29783B',
-  },
-  {
-    name: 'Spinner',
-    route: 'spinner',
-    icon: 'ios-navigate-outline',
-    bg: '#BE6F50',
-  },
-  {
-    name: 'Tab',
-    route: 'tab',
-    icon: 'ios-home',
-    bg: '#AB6AED',
-  },
-  {
-    name: 'Tabs',
-    route: 'tabs',
-    icon: 'ios-home',
-    bg: '#AB6AED',
-  },
-  {
-    name: 'Thumbnail',
-    route: 'thumbnail',
-    icon: 'ios-image-outline',
-    bg: '#cc0000',
-  },
-  {
-    name: 'Typography',
-    route: 'typography',
-    icon: 'md-paper',
-    bg: '#48525D',
-  },
-
-];
 class SideBar extends Component {
 
   static propTypes = {
+    // setIndex: React.PropTypes.func,
     navigateTo: React.PropTypes.func,
-  }
-
-  constructor(props) {
-    super(props);
-    const ds = new List.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = {
-      shadowOffsetWidth: 1,
-      shadowRadius: 4,
-      dataSource: ds.cloneWithRows(data),
-    };
   }
 
   navigateTo(route) {
@@ -156,28 +22,15 @@ class SideBar extends Component {
 
   render() {
     return (
-      <Content
-        style={{ flex: 1, backgroundColor: '#fff' }}
-      >
-        <Image source={drawerCover} style={styles.drawerCover}>
-          <Image
-            square
-            style={styles.drawerImage}
-            source={drawerImage}
-          />
-        </Image>
-        <List
-          dataSource={this.state.dataSource} renderRow={data =>
-            <ListItem button iconLeft onPress={() => this.navigateTo(data.route)} >
-              <View style={styles.listItemContainer}>
-                <View style={[styles.iconContainer, { backgroundColor: data.bg, alignItems: 'center', alignSelf: 'center' }]}>
-                  <Icon name={data.icon} style={styles.sidebarIcon} />
-                </View>
-                <Text style={styles.text}>{data.name}</Text>
-              </View>
-            </ListItem>}
-        />
-
+      <Content theme={myTheme} style={styles.sidebar} >
+        <List>
+          <ListItem button onPress={() => this.navigateTo('home')} >
+            <Text>Home</Text>
+          </ListItem>
+          <ListItem button onPress={() => this.navigateTo('blankPage')} >
+            <Text>Blank Page</Text>
+          </ListItem>
+        </List>
       </Content>
     );
   }
@@ -185,6 +38,7 @@ class SideBar extends Component {
 
 function bindAction(dispatch) {
   return {
+    setIndex: index => dispatch(setIndex(index)),
     navigateTo: (route, homeRoute) => dispatch(navigateTo(route, homeRoute)),
   };
 }

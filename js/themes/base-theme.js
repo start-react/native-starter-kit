@@ -9,7 +9,7 @@ export default {
   badgeColor: '#fff',
 
 
-    // Button
+  // Button
   btnFontFamily: (Platform.OS === 'ios') ? 'HelveticaNeue' : 'Roboto_medium',
   btnDisabledBg: '#b5b5b5',
   btnDisabledClr: '#f1f1f1',
@@ -46,7 +46,7 @@ export default {
   },
   get btnTextSize() {
     return (Platform.OS === 'ios') ? this.fontSizeBase * 1.1 :
-        this.fontSizeBase - 1;
+    this.fontSizeBase - 1;
   },
   get btnTextSizeLarge() {
     return this.fontSizeBase * 1.5;
@@ -68,7 +68,7 @@ export default {
   },
 
 
-    // Card
+  // Card
   cardDefaultBg: '#fff',
 
 
@@ -106,10 +106,12 @@ export default {
   footerHeight: 55,
   footerDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#4179F7',
 
+
   // FooterTab
   tabBarTextColor: (Platform.OS === 'ios') ? '#6b6b6b' : '#b3c7f9',
   tabBarActiveTextColor: (Platform.OS === 'ios') ? '#007aff' : '#fff',
   tabActiveBgColor: (Platform.OS === 'ios') ? '#e4f0fe' : undefined,
+
 
   // Header
   iosToolbarBtnColor: '#007aff',
@@ -156,13 +158,14 @@ export default {
   btnLineHeight: 19,
   lineHeightH1: 32,
   lineHeightH2: 27,
-  lineHeightH3: (Platform.OS === 'ios') ? 22 : 25,
+  lineHeightH3: 22,
   iconLineHeight: (Platform.OS === 'ios') ? 37 : 30,
-  lineHeight: (Platform.OS === 'ios') ? 20 : 24,
+  lineHeight: (Platform.OS === 'ios') ? 20 : 26,
 
 
   // List
-  listBorderColor: '#ddd',
+  listBorderColor: '#ACAAAB',
+  // listBorderColor: '#ddd',
   listDividerBg: '#ddd',
   listItemHeight: 45,
   listItemPadding: 9,
@@ -190,12 +193,9 @@ export default {
 
 
   // Tabs
-  // tabBgColor: '#F8F8F8',
-  // tabFontSize: 15,
-  // tabTextColor: '#fff',
-  tabBgColor: (Platform.OS === 'ios') ? '#F8F8F8' : '#4179F7',
+  tabBgColor: '#F8F8F8',
   tabFontSize: 15,
-  tabTextColor: (Platform.OS === 'ios') ? '#007aff' : '#fff',
+  tabTextColor: '#fff',
 
 
   // Text
