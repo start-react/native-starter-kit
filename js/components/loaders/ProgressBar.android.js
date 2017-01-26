@@ -6,7 +6,7 @@ import NativeBaseComponent from 'native-base/Components/Base/NativeBaseComponent
 import computeProps from 'native-base/Utils/computeProps';
 
 
-export default class SpinnerNB extends NativeBaseComponent {
+export default class ProgressBarNB extends NativeBaseComponent {
 
   prepareRootProps() {
     const type = {
