@@ -22,7 +22,7 @@ class SideBar extends Component {
 
   render() {
     return (
-      <Content theme={myTheme} style={styles.sidebar} >
+      <Content style={styles.sidebar} >
         <List>
           <ListItem button onPress={() => this.navigateTo('home')} >
             <Text>Home</Text>

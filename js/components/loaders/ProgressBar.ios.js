@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ProgressViewIOS } from 'react-native';
-import NativeBaseComponent from 'native-base/Components/Base/NativeBaseComponent';
+import NativeBaseComponent from 'native-base/dist/Components/Base/NativeBaseComponent';
 
 export default class ProgressBarNB extends NativeBaseComponent {
 

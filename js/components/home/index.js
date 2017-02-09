@@ -8,7 +8,6 @@ import { Grid, Row } from 'react-native-easy-grid';
 
 import { openDrawer } from '../../actions/drawer';
 import { setIndex } from '../../actions/list';
-import myTheme from '../../themes/base-theme';
 import styles from './styles';
 
 const {
@@ -37,7 +36,7 @@ class Home extends Component {
 
   render() {
     return (
-      <Container theme={myTheme} style={styles.container}>
+      <Container style={styles.container}>
         <Header>
           <Button transparent onPress={() => this.props.reset(this.props.navigation.key)}>
             <Icon name="ios-power" />
