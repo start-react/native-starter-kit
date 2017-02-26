@@ -15,7 +15,7 @@
 
 No need of reinventing the wheel. To have immediately something to continue building on, it would be best to start from some starter kit for getting React Native - based applications off the ground in a hurry.
 
-This is a starter kit that you can install on the fly to get the basic plumping of React Native with NativeBase, Redux and CodePush.
+This is a starter kit that you can install on the fly to get the basic plumbing of React Native with NativeBase, Redux and CodePush.
 
 *Find out more [Free React JS Themes](http://www.startreact.com/) and [React Native Themes](http://www.startreact.com/).*
 
