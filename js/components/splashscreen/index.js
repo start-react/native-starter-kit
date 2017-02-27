@@ -1,21 +1,29 @@
 
 import React, { Component } from 'react';
 import { Image } from 'react-native';
+import { connect } from 'react-redux';
+import { actions } from 'react-native-navigation-redux-helpers';
 
 const launchscreen = require('../../../images/shadow.png');
 
-export default class SplashPage extends Component {
+import { setIndex } from '../../actions/list';
+
+const {
+  replaceAt,
+} = actions;
+
+class SplashPage extends Component {
 
   static propTypes = {
-    navigator: React.PropTypes.shape({}),
+    navigation: React.PropTypes.shape({
+			key: React.PropTypes.string,
+		}),
   }
 
   componentWillMount() {
-    const navigator = this.props.navigator;
+		console.log('splash, willMount, props: ', this.props);
     setTimeout(() => {
-      navigator.replace({
-        id: 'login',
-      });
+      this.props.replaceAt('splashscreen', { key: 'login' }, this.props.navigation.key);
     }, 1500);
   }
 
@@ -25,3 +33,16 @@ export default class SplashPage extends Component {
     );
   }
 }
+
+function bindAction(dispatch) {
+  return {
+		replaceAt: (routeKey, route, key) => dispatch(replaceAt(routeKey, route, key)),
+    setIndex: index => dispatch(setIndex(index)),
+  };
+}
+
+const mapStateToProps = state => ({
+  navigation: state.cardNavigation,
+});
+
+export default connect(mapStateToProps, bindAction)(SplashPage);
