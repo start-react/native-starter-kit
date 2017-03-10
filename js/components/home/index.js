@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
+import { Container, Header, Title, Content, Text, Button, Icon, Left, Body, Right } from 'native-base';
 import { Grid, Row } from 'react-native-easy-grid';
 
 import { openDrawer } from '../../actions/drawer';
@@ -38,15 +38,21 @@ class Home extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Button transparent onPress={() => this.props.reset(this.props.navigation.key)}>
-            <Icon name="ios-power" />
-          </Button>
+          <Left>
+            <Button transparent onPress={() => this.props.reset(this.props.navigation.key)}>
+              <Icon active name="power" />
+            </Button>
+          </Left>
 
-          <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
+          <Body>
+            <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
+          </Body>
 
-          <Button transparent onPress={this.props.openDrawer}>
-            <Icon name="ios-menu" />
-          </Button>
+          <Right>
+            <Button transparent onPress={this.props.openDrawer}>
+              <Icon active name="menu" />
+            </Button>
+          </Right>
         </Header>
 
         <Content>

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Image } from 'react-native';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Content, InputGroup, Input, Button, Icon, View } from 'native-base';
+import { Container, Content, Item, Input, Button, Icon, View, Text } from 'native-base';
 
 import { setUser } from '../../actions/user';
 import styles from './styles';
@@ -47,19 +47,19 @@ class Login extends Component {
           <Content>
             <Image source={background} style={styles.shadow}>
               <View style={styles.bg}>
-                <InputGroup style={styles.input}>
-                  <Icon name="ios-person" />
+                <Item style={styles.input}>
+                  <Icon active name="person" />
                   <Input placeholder="EMAIL" onChangeText={name => this.setState({ name })} />
-                </InputGroup>
-                <InputGroup style={styles.input}>
-                  <Icon name="ios-unlock-outline" />
+                </Item>
+                <Item style={styles.input}>
+                  <Icon name="unlock" />
                   <Input
                     placeholder="PASSWORD"
                     secureTextEntry
                   />
-                </InputGroup>
+                </Item>
                 <Button style={styles.btn} onPress={() => this.replaceRoute('home')}>
-                  Login
+                  <Text>Login</Text>
                 </Button>
               </View>
             </Image>

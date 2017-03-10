@@ -53,7 +53,7 @@ class AppNavigator extends Component {
     }
 
     if (this.props.drawerState === 'closed') {
-      this._drawer.close();
+      this._drawer._root.close();
     }
   }
 
@@ -62,7 +62,7 @@ class AppNavigator extends Component {
   }
 
   openDrawer() {
-    this._drawer.open();
+    this._drawer._root.open();
   }
 
   closeDrawer() {

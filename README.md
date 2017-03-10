@@ -1,5 +1,5 @@
 
-## Native Starter Kit v5.2.1
+## Native Starter Kit v6.0.0
 
 ### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
 
@@ -110,11 +110,7 @@ This is a [React Native](https://github.com/facebook/react-native) Project with 
 
 ###1. System Requirements
 
-* Globally installed [node](https://nodejs.org/en/) >= 4.0
-
-* Globally installed [npm](https://www.npmjs.org/) >= 3.0
-
-* Globally installed [rnpm](https://github.com/rnpm/rnpm) *(only if React Native version < 0.29)*
+* Globally installed [node](https://nodejs.org/en/)
 
 * Globally installed [react-native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
 
@@ -132,14 +128,6 @@ $ cd native-starter-kit/
 
 $ npm install
 ```
-
-If React Native < 0.29
-
-```sh
-$rnpm link
-```
-
-If React Native >= 0.29
 
 ```sh
 $ react-native link

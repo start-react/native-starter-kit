@@ -5,7 +5,7 @@ const { StyleSheet, Dimensions } = React;
 
 const deviceHeight = Dimensions.get('window').height;
 
-module.exports = StyleSheet.create({
+export default {
   container: {
     position: 'absolute',
     top: 0,
@@ -35,4 +35,4 @@ module.exports = StyleSheet.create({
     marginTop: 20,
     alignSelf: 'center',
   },
-});
+};

@@ -60,22 +60,34 @@
       <string>Arial.ttf</string>
       <string>Comic Sans MS.ttf</string>
       <string>Courier New.ttf</string>
-      <string>Georgia.ttf</string>
-      <string>Microsoft Sans Serif.ttf</string>
-      <string>Roboto_medium.ttf</string>
-      <string>Roboto.ttf</string>
-      <string>SF-UI-Text-Regular.otf</string>
-      <string>Skia.ttf</string>
-      <string>Times New Roman.ttf</string>
       <string>Entypo.ttf</string>
       <string>EvilIcons.ttf</string>
       <string>FontAwesome.ttf</string>
       <string>Foundation.ttf</string>
+      <string>Georgia.ttf</string>
       <string>Ionicons.ttf</string>
-      <string>MaterialCommunityIcons.ttf</string>
       <string>MaterialIcons.ttf</string>
+      <string>Microsoft Sans Serif.ttf</string>
       <string>Octicons.ttf</string>
-      <string>SimpleLineIcons.ttf</string>
+      <string>Roboto_medium.ttf</string>
+      <string>Roboto.ttf</string>
+      <string>rubicon-icon-font.ttf</string>
+      <string>Rubik-Black.ttf</string>
+      <string>Rubik-BlackItalic.ttf</string>
+      <string>Rubik-Bold.ttf</string>
+      <string>Rubik-BoldItalic.ttf</string>
+      <string>Rubik-Italic.ttf</string>
+      <string>Rubik-Light.ttf</string>
+      <string>Rubik-LightItalic.ttf</string>
+      <string>Rubik-Medium.ttf</string>
+      <string>Rubik-MediumItalic.ttf</string>
+      <string>Rubik-Regular.ttf</string>
+      <string>SanFrancisco.ttf</string>
+      <string>SanFranciscoBold.ttf</string>
+      <string>SanFranciscoThin.ttf</string>
+      <string>SF-UI-Text-Regular.otf</string>
+      <string>Skia.ttf</string>
+      <string>Times New Roman.ttf</string>
       <string>Zocial.ttf</string>
     </array>
   </dict>

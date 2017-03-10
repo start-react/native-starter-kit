@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
+import { Container, Header, Title, Content, Text, Button, Icon, Left, Right, Body } from 'native-base';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
@@ -34,15 +34,21 @@ class BlankPage extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Button transparent onPress={() => this.popRoute()}>
-            <Icon name="ios-arrow-back" />
-          </Button>
+          <Left>
+            <Button transparent onPress={() => this.popRoute()}>
+              <Icon name="ios-arrow-back" />
+            </Button>
+          </Left>
 
-          <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
+          <Body>
+            <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
+          </Body>
 
-          <Button transparent onPress={this.props.openDrawer}>
-            <Icon name="ios-menu" />
-          </Button>
+          <Right>
+            <Button transparent onPress={this.props.openDrawer}>
+              <Icon name="ios-menu" />
+            </Button>
+          </Right>
         </Header>
 
         <Content padder>
