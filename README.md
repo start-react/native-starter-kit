@@ -38,7 +38,7 @@ React Native helps in making the development work easier and allowing the develo
 
 **The hymn of React Native — learn once, write anywhere.**
 
-React Native takes charge of the view controllers and programatically generates native views using javascript. This means that you can have all the speed and power of a native application, with the ease of development that comes with React.
+React Native takes charge of the view controllers and programmatically generates native views using javascript. This means that you can have all the speed and power of a native application, with the ease of development that comes with React.
 
 
 ### [NativeBase](http://nativebase.io/)
@@ -87,7 +87,7 @@ NavigationExperimental allows any view to act as a navigation view and using red
 
 ### [React Native Easy Grid](https://github.com/GeekyAnts/react-native-easy-grid)
 
-React Native Easy Grid is a open source package for grid layout from the team of [StrapMobile](http://strapmobile.com/).
+React Native Easy Grid is an open source package for grid layout from the team of [StrapMobile](http://strapmobile.com/).
 
 The layout system is an essential concept that needs to be mastered in order to create great layouts and UIs. [React Native](https://github.com/facebook/react-native) uses Flexbox to create the layouts, which is great when we need to accommodate our components and views in different screen sizes or even different devices. Flexbox is awesome but it could be tiresome for newbies.
 
