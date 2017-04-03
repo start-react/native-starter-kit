@@ -1,4 +1,3 @@
-
 ## Native Starter Kit v6.0.0
 
 ### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
