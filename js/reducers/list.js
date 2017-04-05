@@ -9,6 +9,14 @@ export type State = {
 
 const initialState = {
   list: I18n.t('REDUCER.LIST'),
+  list: [
+    'React Native Starter Kit',
+    'Navigation Experimental',
+    'NativeBase Easy Grid',
+    'NativeBase',
+    'CodePush',
+    'Redux',
+  ],
   selectedIndex: undefined,
 };
 

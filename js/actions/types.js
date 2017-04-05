@@ -10,7 +10,6 @@ export type Action =
     | { type: 'SET_USER', name: string}
     | { type: 'SET_LIST', list: string}
 
+export type Dispatch = (action:Action | Array<Action>) => any;
 export type GetState = () => Object;
 export type PromiseAction = Promise<Action>;
-export type Dispatch = (action:Action | PromiseAction | Array<Action>) => any;
-export type ThunkAction = (dispatch:Dispatch, getState:GetState) => any;

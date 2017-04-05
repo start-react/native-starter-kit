@@ -1,7 +1,7 @@
 
-## Native Starter Kit v5.2.0
+## Native Starter Kit v6.0.0
 
-### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
+### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
 
 *Brought to you by [StrapMobile](http://strapmobile.com/)*
 
@@ -11,7 +11,7 @@
 ![Native-Starter-Kit](/Screenshots/logo.png)
 
 
-#### A simple starter project for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Redux](http://redux.js.org) + [React Native Navigator](https://facebook.github.io/react-native/docs/navigator.html) + [CodePush](https://github.com/Microsoft/react-native-code-push) apps on iOS and Android.
+#### A simple starter project for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) apps on iOS and Android.
 
 No need of reinventing the wheel. To have immediately something to continue building on, it would be best to start from some starter kit for getting React Native - based applications off the ground in a hurry.
 
@@ -28,10 +28,7 @@ This is a starter kit that you can install on the fly to get the basic plumping 
 
 ## Screens
 
- iOS | Android
- :--:| :-----:
- ![ios-demo](/Screenshots/iOS/demo.gif) | ![android-demo](/Screenshots/android/demo.gif)
-
+ ![ios-demo](/Screenshots/iOS/demo.gif)
 
 ## Technologies
 *Technologies used in Native Starter Kit*
@@ -41,7 +38,7 @@ React Native helps in making the development work easier and allowing the develo
 
 **The hymn of React Native — learn once, write anywhere.**
 
-React Native takes charge of the view controllers and programatically generates native views using javascript. This means that you can have all the speed and power of a native application, with the ease of development that comes with React.
+React Native takes charge of the view controllers and programmatically generates native views using javascript. This means that you can have all the speed and power of a native application, with the ease of development that comes with React.
 
 
 ### [NativeBase](http://nativebase.io/)
@@ -82,15 +79,15 @@ The CodePush plugin helps get product improvements in front of your end users in
 
 
 
-### [Navigator](https://facebook.github.io/react-native/docs/navigator.html)
+### [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental)
 
-Navigation is a core part of any application. Native Starter Kit makes use of [React Native](https://github.com/facebook/react-native) <Navigator /> component to help with navigation.
+NavigationExperimental allows any view to act as a navigation view and using reducers to manipulate state at a top-level object.
 
 
 
 ### [React Native Easy Grid](https://github.com/GeekyAnts/react-native-easy-grid)
 
-React Native Easy Grid is a open source package for grid layout from the team of [StrapMobile](http://strapmobile.com/).
+React Native Easy Grid is an open source package for grid layout from the team of [StrapMobile](http://strapmobile.com/).
 
 The layout system is an essential concept that needs to be mastered in order to create great layouts and UIs. [React Native](https://github.com/facebook/react-native) uses Flexbox to create the layouts, which is great when we need to accommodate our components and views in different screen sizes or even different devices. Flexbox is awesome but it could be tiresome for newbies.
 
@@ -106,26 +103,18 @@ React Native-NativeBase Seed is a basic configuration that every React Native ap
 
 This is open source and perfect for any newbie to start with React Native.
 
-This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](http://nativebase.io/docs/v0.5.7/), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
-
-
-
+This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](http://nativebase.io/documentation), [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
 
 
 ## Get Started
 
 ###1. System Requirements
 
-* Globally installed [node](https://nodejs.org/en/) >= 4.0
-
-* Globally installed [npm](https://www.npmjs.org/) >= 3.0
-
-* Globally installed [rnpm](https://github.com/rnpm/rnpm) *(only if React Native version < 0.29)*
+* Globally installed [node](https://nodejs.org/en/)
 
 * Globally installed [react-native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
 
 * Install [CodePush](https://microsoft.github.io/code-push/) globally and get keys for your app.
-
 
 
 ###2. Installation
@@ -133,40 +122,25 @@ This is a [React Native](https://github.com/facebook/react-native) Project with 
 On the command prompt run the following commands
 
 ```sh
-$ git clone git@github.com:start-react/native-starter-kit.git
+$ git clone https://github.com/start-react/native-starter-kit.git
 
 $ cd native-starter-kit/
 
 $ npm install
 ```
 
-If React Native < 0.29
-
-```sh
-$rnpm link
-```
-
-If React Native >= 0.29
-
 ```sh
 $ react-native link
 ```
+
+[CodePush](https://github.com/Microsoft/react-native-code-push) plugin installation and key deployment.
+
 
 ###3. Simulate for iOS
 
 **Method One**
 
 *	Open the project in XCode from **ios/NativeStarterKit.xcodeproj**
-
-*	[CodePush](https://github.com/Microsoft/react-native-code-push) plugin installation:
-
-*	CodePush key deployment
-
-	*	Go to **"Build Settings"** and search for keyword - **codepush**.
-
-	*	Add the **codepush production key** in place of **Release key**
-
-	*	Add the **codepush staging key** in place of **Debug key**
 
 *	Hit the play button.
 
@@ -180,27 +154,6 @@ $ react-native run-ios
 ```
 
 ###4. Simulate for Android
-
-*	Codepush key deployment
-
-	*	Open file **/android/app/build.gradle**
-
-	*	Search for **buildTypes** and add following lines of code
-
-```sh
-.  .  .
-buildTypes {
-    release {
-        buildConfigField "String", "CODEPUSH_KEY", '"codepush_production_key"'
-        .  .  .
-    }
-
-    debug {
-        buildConfigField "String", "CODEPUSH_KEY", '"codepush_staging_key"'
-    }
-}
-.  .  .
-```
 
 *	Make sure you have an **Android emulator** installed and running.
 

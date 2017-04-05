@@ -3,7 +3,7 @@ const React = require('react-native');
 
 const { StyleSheet } = React;
 
-module.exports = StyleSheet.create({
+export default {
   sidebar: {
     flex: 1,
     padding: 10,
@@ -11,4 +11,4 @@ module.exports = StyleSheet.create({
     paddingTop: 30,
     backgroundColor: '#fff',
   },
-});
+};

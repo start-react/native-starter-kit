@@ -2,8 +2,7 @@
 const React = require('react-native');
 
 const { StyleSheet } = React;
-
-module.exports = StyleSheet.create({
+export default {
   container: {
     backgroundColor: '#FBFAFA',
   },
@@ -17,6 +16,6 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
   },
   mt: {
-    marginTop: 20,
+    marginTop: 18,
   },
-});
+};

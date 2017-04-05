@@ -5,13 +5,14 @@ const { StyleSheet, Dimensions } = React;
 
 const deviceHeight = Dimensions.get('window').height;
 
-module.exports = StyleSheet.create({
+export default {
   container: {
     position: 'absolute',
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
+    backgroundColor: '#FBFAFA',
   },
   shadow: {
     flex: 1,
@@ -34,4 +35,4 @@ module.exports = StyleSheet.create({
     marginTop: 20,
     alignSelf: 'center',
   },
-});
+};
