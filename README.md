@@ -108,7 +108,7 @@ This is a [React Native](https://github.com/facebook/react-native) Project with 
 
 ## Get Started
 
-###1. System Requirements
+### 1. System Requirements
 
 * Globally installed [node](https://nodejs.org/en/)
 
@@ -117,7 +117,7 @@ This is a [React Native](https://github.com/facebook/react-native) Project with 
 * Install [CodePush](https://microsoft.github.io/code-push/) globally and get keys for your app.
 
 
-###2. Installation
+### 2. Installation
 
 On the command prompt run the following commands
 
@@ -136,7 +136,7 @@ $ react-native link
 [CodePush](https://github.com/Microsoft/react-native-code-push) plugin installation and key deployment.
 
 
-###3. Simulate for iOS
+### 3. Simulate for iOS
 
 **Method One**
 
@@ -153,7 +153,7 @@ $ react-native link
 $ react-native run-ios
 ```
 
-###4. Simulate for Android
+### 4. Simulate for Android
 
 *	Make sure you have an **Android emulator** installed and running.
 
