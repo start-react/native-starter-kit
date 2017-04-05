@@ -9,6 +9,7 @@ import { Grid, Row } from 'react-native-easy-grid';
 import { openDrawer } from '../../actions/drawer';
 import { setIndex } from '../../actions/list';
 import styles from './styles';
+import I18n from '../../../i18n';
 
 const {
   reset,
@@ -45,7 +46,7 @@ class Home extends Component {
           </Left>
 
           <Body>
-            <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
+            <Title>{(this.props.name) ? this.props.name : I18n.t('HOME.TITLE')}</Title>
           </Body>
 
           <Right>

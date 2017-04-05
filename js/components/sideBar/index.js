@@ -8,6 +8,7 @@ import navigateTo from '../../actions/sideBarNav';
 import myTheme from '../../themes/base-theme';
 
 import styles from './style';
+import I18n from '../../../i18n';
 
 class SideBar extends Component {
 
@@ -24,10 +25,10 @@ class SideBar extends Component {
     return (
       <Content style={styles.sidebar} >
           <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Home</Text>
+            <Text>{I18n.t('SIDEBAR.NAV.HOME')}</Text>
           </ListItem>
           <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank Page</Text>
+            <Text>{I18n.t('SIDEBAR.NAV.BLANKPAGE')}</Text>
           </ListItem>
       </Content>
     );

@@ -1,12 +1,14 @@
 
 import type { Action } from '../actions/types';
 import { SET_INDEX } from '../actions/list';
+import I18n from '../../i18n';
 
 export type State = {
     list: string
 }
 
 const initialState = {
+  list: I18n.t('REDUCER.LIST'),
   list: [
     'React Native Starter Kit',
     'Navigation Experimental',

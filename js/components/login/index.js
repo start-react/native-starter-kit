@@ -7,6 +7,7 @@ import { Container, Content, Item, Input, Button, Icon, View, Text } from 'nativ
 
 import { setUser } from '../../actions/user';
 import styles from './styles';
+import I18n from '../../../i18n';
 
 const {
   replaceAt,
@@ -54,12 +55,12 @@ class Login extends Component {
                 <Item style={styles.input}>
                   <Icon name="unlock" />
                   <Input
-                    placeholder="PASSWORD"
+                    placeholder={I18n.t('LOGIN.PASSWORD.PLACEHOLDER')}
                     secureTextEntry
                   />
                 </Item>
                 <Button style={styles.btn} onPress={() => this.replaceRoute('home')}>
-                  <Text>Login</Text>
+                  {I18n.t('LOGIN.LOGIN_BUTTON')}
                 </Button>
               </View>
             </Image>

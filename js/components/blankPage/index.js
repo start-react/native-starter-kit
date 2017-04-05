@@ -6,6 +6,7 @@ import { Container, Header, Title, Content, Text, Button, Icon, Left, Right, Bod
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
+import I18n from '../../../i18n';
 
 const {
   popRoute,
@@ -39,9 +40,8 @@ class BlankPage extends Component {
               <Icon name="ios-arrow-back" />
             </Button>
           </Left>
-
           <Body>
-            <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
+            <Title>{(name) ? this.props.name : I18n.t('BLANKPAGE.TITLE')}</Title>
           </Body>
 
           <Right>
@@ -53,7 +53,7 @@ class BlankPage extends Component {
 
         <Content padder>
           <Text>
-            {(!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
+            {(!isNaN(index)) ? list[index] : I18n.t('BLANKPAGE.BODY_CONTENT')}
           </Text>
         </Content>
       </Container>
