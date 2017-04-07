@@ -1,15 +1,11 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { actions } from 'react-native-navigation-redux-helpers';
+import { Actions } from 'react-native-router-flux';
 import { Container, Header, Title, Content, Text, Button, Icon, Left, Right, Body } from 'native-base';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
-
-const {
-  popRoute,
-} = actions;
 
 class BlankPage extends Component {
 
@@ -18,14 +14,6 @@ class BlankPage extends Component {
     index: React.PropTypes.number,
     list: React.PropTypes.arrayOf(React.PropTypes.string),
     openDrawer: React.PropTypes.func,
-    popRoute: React.PropTypes.func,
-    navigation: React.PropTypes.shape({
-      key: React.PropTypes.string,
-    }),
-  }
-
-  popRoute() {
-    this.props.popRoute(this.props.navigation.key);
   }
 
   render() {
@@ -35,7 +23,7 @@ class BlankPage extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.popRoute()}>
+            <Button transparent onPress={() => Actions.pop()}>
               <Icon name="ios-arrow-back" />
             </Button>
           </Left>
@@ -64,12 +52,10 @@ class BlankPage extends Component {
 function bindAction(dispatch) {
   return {
     openDrawer: () => dispatch(openDrawer()),
-    popRoute: key => dispatch(popRoute(key)),
   };
 }
 
 const mapStateToProps = state => ({
-  navigation: state.cardNavigation,
   name: state.user.name,
   index: state.list.selectedIndex,
   list: state.list.list,

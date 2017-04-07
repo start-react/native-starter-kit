@@ -1,11 +1,11 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Content, Text, List, ListItem } from 'native-base';
+import { Content, Text, ListItem } from 'native-base';
+import { Actions } from 'react-native-router-flux';
 
+import { closeDrawer } from '../../actions/drawer';
 import { setIndex } from '../../actions/list';
-import navigateTo from '../../actions/sideBarNav';
-import myTheme from '../../themes/base-theme';
 
 import styles from './style';
 
@@ -13,6 +13,7 @@ class SideBar extends Component {
 
   static propTypes = {
     // setIndex: React.PropTypes.func,
+    closeDrawer: React.PropTypes.func,
     navigateTo: React.PropTypes.func,
   }
 
@@ -23,12 +24,12 @@ class SideBar extends Component {
   render() {
     return (
       <Content style={styles.sidebar} >
-          <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Home</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank Page</Text>
-          </ListItem>
+        <ListItem button onPress={() => { Actions.home(); this.props.closeDrawer(); }} >
+          <Text>Home</Text>
+        </ListItem>
+        <ListItem button onPress={() => { Actions.blankPage(); this.props.closeDrawer(); }} >
+          <Text>Blank Page</Text>
+        </ListItem>
       </Content>
     );
   }
@@ -36,13 +37,9 @@ class SideBar extends Component {
 
 function bindAction(dispatch) {
   return {
+    closeDrawer: () => dispatch(closeDrawer()),
     setIndex: index => dispatch(setIndex(index)),
-    navigateTo: (route, homeRoute) => dispatch(navigateTo(route, homeRoute)),
   };
 }
 
-const mapStateToProps = state => ({
-  navigation: state.cardNavigation,
-});
-
-export default connect(mapStateToProps, bindAction)(SideBar);
+export default connect(null, bindAction)(SideBar);

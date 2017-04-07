@@ -18,6 +18,7 @@ import footerTabTheme from './FooterTab';
 import fabTheme from './Fab';
 import itemTheme from './Item';
 import labelTheme from './Label';
+import inputTheme from './Input';
 import textAreaTheme from './Textarea';
 import textTheme from './Text';
 import toastTheme from './Toast';
@@ -42,6 +43,9 @@ export default (variables = variable) => {
       flex: 1,
       alignSelf: 'center',
       alignItems: 'flex-start',
+    },
+    'NativeBase.Input': {
+      ...inputTheme(variables),
     },
     'NativeBase.Right': {
       'NativeBase.Button': {

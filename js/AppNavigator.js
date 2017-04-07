@@ -1,51 +1,28 @@
 
 import React, { Component } from 'react';
-import { BackAndroid, StatusBar, NavigationExperimental } from 'react-native';
+import { StatusBar } from 'react-native';
 import { connect } from 'react-redux';
 import { Drawer } from 'native-base';
-import { actions } from 'react-native-navigation-redux-helpers';
+import { Router, Scene } from 'react-native-router-flux';
 
 import { closeDrawer } from './actions/drawer';
 
 import Login from './components/login/';
 import Home from './components/home/';
 import BlankPage from './components/blankPage';
-import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
 import { statusBarColor } from './themes/base-theme';
 
-const {
-  popRoute,
-} = actions;
 
-const {
-  CardStack: NavigationCardStack,
-} = NavigationExperimental;
+const RouterWithRedux = connect()(Router);
 
 class AppNavigator extends Component {
 
   static propTypes = {
     drawerState: React.PropTypes.string,
-    popRoute: React.PropTypes.func,
     closeDrawer: React.PropTypes.func,
-    navigation: React.PropTypes.shape({
-      key: React.PropTypes.string,
-      routes: React.PropTypes.array,
-    }),
   }
 
-  componentDidMount() {
-    BackAndroid.addEventListener('hardwareBackPress', () => {
-      const routes = this.props.navigation.routes;
-
-      if (routes[routes.length - 1].key === 'home' || routes[routes.length - 1].key === 'login') {
-        return false;
-      }
-
-      this.props.popRoute(this.props.navigation.key);
-      return true;
-    });
-  }
 
   componentDidUpdate() {
     if (this.props.drawerState === 'opened') {
@@ -57,9 +34,6 @@ class AppNavigator extends Component {
     }
   }
 
-  popRoute() {
-    this.props.popRoute();
-  }
 
   openDrawer() {
     this._drawer._root.open();
@@ -73,8 +47,6 @@ class AppNavigator extends Component {
 
   _renderScene(props) { // eslint-disable-line class-methods-use-this
     switch (props.scene.route.key) {
-      case 'splashscreen':
-        return <SplashPage />;
       case 'login':
         return <Login />;
       case 'home':
@@ -119,11 +91,13 @@ class AppNavigator extends Component {
           backgroundColor={statusBarColor}
           barStyle="default"
         />
-        <NavigationCardStack
-          navigationState={this.props.navigation}
-          renderOverlay={this._renderOverlay}
-          renderScene={this._renderScene}
-        />
+        <RouterWithRedux>
+          <Scene key="root">
+            <Scene key="login" component={Login} hideNavBar initial />
+            <Scene key="home" component={Home} />
+            <Scene key="blankPage" component={BlankPage} />
+          </Scene>
+        </RouterWithRedux>
       </Drawer>
     );
   }
@@ -132,7 +106,6 @@ class AppNavigator extends Component {
 function bindAction(dispatch) {
   return {
     closeDrawer: () => dispatch(closeDrawer()),
-    popRoute: key => dispatch(popRoute(key)),
   };
 }
 
