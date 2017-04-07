@@ -1,5 +1,5 @@
 
-## Native Starter Kit v6.0.0
+## Native Starter Kit v6.1.0
 
 ### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
 
@@ -11,7 +11,7 @@
 ![Native-Starter-Kit](/Screenshots/logo.png)
 
 
-#### A simple starter project for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) apps on iOS and Android.
+#### A simple starter project for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [React Native Router Flux](https://github.com/aksonov/react-native-router-flux) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) apps on iOS and Android.
 
 No need of reinventing the wheel. To have immediately something to continue building on, it would be best to start from some starter kit for getting React Native - based applications off the ground in a hurry.
 
@@ -79,9 +79,11 @@ The CodePush plugin helps get product improvements in front of your end users in
 
 
 
-### [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental)
-
-NavigationExperimental allows any view to act as a navigation view and using reducers to manipulate state at a top-level object.
+##[React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
+[React Native Router Flux](https://github.com/aksonov/react-native-router-flux) is a routing package that allows you to:
+  * Define scene transitions in one central location
+  * Without having to pass navigator objects around, and allow you to
+  * Call transitions anywhere in your code with a simple syntax.
 
 
 
