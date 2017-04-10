@@ -105,7 +105,7 @@ React Native-NativeBase Seed is a basic configuration that every React Native ap
 
 This is open source and perfect for any newbie to start with React Native.
 
-This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](http://nativebase.io/documentation), [Navigation Experimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
+This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](http://nativebase.io/documentation), [React Native Router Flux](https://github.com/aksonov/react-native-router-flux), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
 
 
 ## Get Started
@@ -168,4 +168,4 @@ $ react-native run-android
 Note: If you are building Native Starter Kit for first time on your system, please follow Method One to simulate on iOS. (To link the CodePush plugin through Xcode for iOS)
 
 
-For apps with more advance designs, please visit **[StrapMobile](https://strapmobile.com/)**.
+For apps with more advance designs, please visit **[NativeBase Market](https://market.nativebase.io/)**.
