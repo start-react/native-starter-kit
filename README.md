@@ -79,7 +79,7 @@ The CodePush plugin helps get product improvements in front of your end users in
 
 
 
-##[React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
+### [React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
 [React Native Router Flux](https://github.com/aksonov/react-native-router-flux) is a routing package that allows you to:
   * Define scene transitions in one central location
   * Without having to pass navigator objects around, and allow you to
