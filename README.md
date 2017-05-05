@@ -15,7 +15,7 @@
 
 No need of reinventing the wheel. To have immediately something to continue building on, it would be best to start from some starter kit for getting React Native - based applications off the ground in a hurry.
 
-This is a starter kit that you can install on the fly to get the basic plumping of React Native with NativeBase, Redux and CodePush.
+This is a starter kit that you can install on the fly to get the basic plumbing of React Native with NativeBase & Redux .
 
 *Find out more [Free React JS Themes](http://www.startreact.com/) and [React Native Themes](http://www.startreact.com/).*
 
@@ -60,7 +60,9 @@ NativeBase without a doubt fits in well with mobile applications which cut downs
 
 ### [Redux](http://redux.js.org)
 
-As the requirements for JavaScript single-page applications have become increasingly complicated, our code must manage more state than ever before. UI state is also increasing in complexity, as we need to manage the active route, the selected tab, whether to show a spinner or not, should pagination controls be displayed, and so on.
+As the requirements for JavaScript single-page applications have become increasingly complicated, our 
+
+must manage more state than ever before. UI state is also increasing in complexity, as we need to manage the active route, the selected tab, whether to show a spinner or not, should pagination controls be displayed, and so on.
 
 Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
 
