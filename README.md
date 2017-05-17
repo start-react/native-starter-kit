@@ -1,23 +1,21 @@
 
 ## Native Starter Kit v6.1.0
 
-### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [React Native Router Flux](https://github.com/aksonov/react-native-router-flux) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
+### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](https://nativebase.io/) + [React Native Router Flux](https://github.com/aksonov/react-native-router-flux) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
 
-*Brought to you by [StrapMobile](http://strapmobile.com/)*
-
-[![Join the chat at https://gitter.im/start-react/native-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/start-react/native-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+*Brought to you by [NativeBase](https://nativebase.io/)*
 
 
 ![Native-Starter-Kit](/Screenshots/logo.png)
 
 
-#### A simple starter project for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [React Native Router Flux](https://github.com/aksonov/react-native-router-flux) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) apps on iOS and Android.
+#### A simple starter project for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](https://nativebase.io/) + [React Native Router Flux](https://github.com/aksonov/react-native-router-flux) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) apps on iOS and Android.
 
 No need of reinventing the wheel. To have immediately something to continue building on, it would be best to start from some starter kit for getting React Native - based applications off the ground in a hurry.
 
 This is a starter kit that you can install on the fly to get the basic plumbing of React Native with NativeBase, Redux and CodePush.
 
-*Find out more [Free React JS Themes](http://www.startreact.com/) and [React Native Themes](http://www.startreact.com/).*
+*Find out more Free [React JS Themes](http://www.startreact.com/) and [React Native Themes](https://www.startreact.com/).*
 
 # Content
 
@@ -41,9 +39,9 @@ React Native helps in making the development work easier and allowing the develo
 React Native takes charge of the view controllers and programmatically generates native views using javascript. This means that you can have all the speed and power of a native application, with the ease of development that comes with React.
 
 
-### [NativeBase](http://nativebase.io/)
+### [NativeBase](https://nativebase.io/)
 
-NativeBase is a free and open source framework from the team of [StrapMobile](http://strapmobile.com/).
+NativeBase is a free and open source framework.
 
 This framework enable developers to build high-quality mobile apps using React Native iOS and Android apps with a fusion of ES6. NativeBase builds a layer on top of React Native that provides you with basic set of components for mobile application development.
 
@@ -52,10 +50,10 @@ The applications stack of components is built using native UI components and bec
 NativeBase without a doubt fits in well with mobile applications which cut downs one huge part of your app The Front end.
 
 -	*[On GitHub](https://github.com/GeekyAnts/NativeBase)*
--	*[NativeBase Features](http://nativebase.io/documentation)*
--	*[NativeBase Components](http://nativebase.io/components)*
--	*[Docs](http://nativebase.io/documentation)*
--	*[Blogs](https://blog.nativebase.io/)*
+-	*[NativeBase Features](https://docs.nativebase.io/)*
+-	*[NativeBase Components](https://docs.nativebase.io/Components.html#Components)*
+-	*[Docs](https://docs.nativebase.io/Components.html#Components)*
+-	*[Blog](https://blog.nativebase.io/)*
 
 
 ### [Redux](http://redux.js.org)
@@ -89,23 +87,23 @@ The CodePush plugin helps get product improvements in front of your end users in
 
 ### [React Native Easy Grid](https://github.com/GeekyAnts/react-native-easy-grid)
 
-React Native Easy Grid is an open source package for grid layout from the team of [StrapMobile](http://strapmobile.com/).
+React Native Easy Grid is an open source package for grid layout from the team of [NativeBase](https://nativebase.io/).
 
 The layout system is an essential concept that needs to be mastered in order to create great layouts and UIs. [React Native](https://github.com/facebook/react-native) uses Flexbox to create the layouts, which is great when we need to accommodate our components and views in different screen sizes or even different devices. Flexbox is awesome but it could be tiresome for newbies.
 
 Easy Grid is very powerful and flexible layout system. No more worries about props of Flexbox such as alignItems, flexDirection, justifyContent, margin, padding, position, width etc. You can create any layout with all the available options that we have. Flexbox makes it look like percentages, however what actually is happening is just ratios. On the easier part, ratios are easier to represent than percentage/decimals. For this reason, the Easy Grid takes in ratios in place of percentage.
 Performance wise, Easy Grid is noteworthy and works as fine as Flexbox, not much of calculation.
 
-[More Examples](http://nativebase.io/components#layout) . . .
+[More Examples](https://docs.nativebase.io/Components.html#Layout) . . .
 
 
 ### [React Native-NativeBase Seed](https://github.com/GeekyAnts/react-native-native-base-seed)
 
-React Native-NativeBase Seed is a basic configuration that every React Native app must have; brought to you by [StrapMobile](http://strapmobile.com/).
+React Native-NativeBase Seed is a basic configuration that every React Native app must have.
 
 This is open source and perfect for any newbie to start with React Native.
 
-This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](http://nativebase.io/documentation), [React Native Router Flux](https://github.com/aksonov/react-native-router-flux), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
+This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](https://docs.nativebase.io/), [React Native Router Flux](https://github.com/aksonov/react-native-router-flux), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
 
 
 ## Get Started
