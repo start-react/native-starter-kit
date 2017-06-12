@@ -19,7 +19,6 @@ import styles from "./styles";
 const background = require("../../../images/shadow.png");
 
 const validate = values => {
-  console.log("validate", values);
   const error = {};
   error.email = "";
   error.password = "";
@@ -97,10 +96,7 @@ class Login extends Component {
               <View style={styles.bg}>
                 <Field name="email" component={this.renderInput} />
                 <Field name="password" component={this.renderInput} />
-                <Button
-                  style={styles.btn}
-                  onPress={() => this.props.navigation.navigate("Home")}
-                >
+                <Button style={styles.btn} onPress={() => Actions.home()}>
                   <Text>Login</Text>
                 </Button>
               </View>
