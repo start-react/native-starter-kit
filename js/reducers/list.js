@@ -1,28 +1,27 @@
-
-import type { Action } from '../actions/types';
-import { SET_INDEX } from '../actions/list';
+import type { Action } from "../actions/types";
+import { SET_INDEX } from "../actions/list";
 
 export type State = {
-    list: string
-}
+  list: string
+};
 
 const initialState = {
   list: [
-    'React Native Starter Kit',
-    'React Native Router Flux',
-    'NativeBase Easy Grid',
-    'NativeBase',
-    'CodePush',
-    'Redux',
+    "React Native Starter Kit",
+    "React Navigation",
+    "NativeBase Easy Grid",
+    "NativeBase",
+    "CodePush",
+    "Redux"
   ],
-  selectedIndex: undefined,
+  selectedIndex: undefined
 };
 
-export default function (state:State = initialState, action:Action): State {
+export default function(state: State = initialState, action: Action): State {
   if (action.type === SET_INDEX) {
     return {
       ...state,
-      selectedIndex: action.payload,
+      selectedIndex: action.payload
     };
   }
   return state;
