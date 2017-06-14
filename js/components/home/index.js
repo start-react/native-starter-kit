@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import BlankPage2 from "../blankPage2";
 import DrawBar from "../DrawBar";
 import { DrawerNavigator, NavigationActions } from "react-navigation";
-import { Actions, ActionConst } from "react-native-router-flux";
 import {
   Container,
   Header,

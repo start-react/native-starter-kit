@@ -11,7 +11,6 @@ import {
   View,
   Text
 } from "native-base";
-import { Actions } from "react-native-router-flux";
 import { Field, reduxForm } from "redux-form";
 import { setUser } from "../../actions/user";
 import styles from "./styles";

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Actions } from "react-native-router-flux";
 import {
   Container,
   Header,
@@ -14,7 +13,6 @@ import {
   Body
 } from "native-base";
 
-import { openDrawer } from "../../actions/drawer";
 import styles from "./styles";
 
 class BlankPage extends Component {
