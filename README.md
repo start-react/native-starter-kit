@@ -1,7 +1,7 @@
 
 ## Native Starter Kit v6.1.0
 
-### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](https://nativebase.io/) + [React Native Router Flux](https://github.com/aksonov/react-native-router-flux) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
+### A Starter Kit for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](https://nativebase.io/) + [React Navigation](https://reactnavigation.org/) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) Apps (iOS & Android)
 
 *Brought to you by [NativeBase](https://nativebase.io/)*
 
@@ -9,7 +9,8 @@
 ![Native-Starter-Kit](/Screenshots/logo.png)
 
 
-#### A simple starter project for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](https://nativebase.io/) + [React Native Router Flux](https://github.com/aksonov/react-native-router-flux) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) apps on iOS and Android.
+#### A simple starter project for [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](https://nativebase.io/) + [React Navigation](https://reactnavigation.org/) + [Redux](http://redux.js.org) + [CodePush](https://github.com/Microsoft/react-native-code-push) apps on iOS and Android.
+**Note:** Shifted to [React Navigation](https://reactnavigation.org/) from [React Native Router Flux](https://github.com/aksonov/react-native-router-flux) in the master branch. [React Navigation](https://reactnavigation.org/) has become standard for navigation solution in [React Native](https://facebook.github.io/react-native/docs/getting-started.html). We are just keeping up with the current trend.
 
 No need of reinventing the wheel. To have immediately something to continue building on, it would be best to start from some starter kit for getting React Native - based applications off the ground in a hurry.
 
@@ -77,11 +78,11 @@ The CodePush plugin helps get product improvements in front of your end users in
 
 
 
-### [React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
-[React Native Router Flux](https://github.com/aksonov/react-native-router-flux) is a routing package that allows you to:
-  * Define scene transitions in one central location
-  * Without having to pass navigator objects around, and allow you to
-  * Call transitions anywhere in your code with a simple syntax.
+### [React Navigation](https://reactnavigation.org/)
+[React Navigation](https://reactnavigation.org/) is a routing package that allows you to:
+  * Declare different kinds of Routers.
+  * Routers fall into the category of **StackNavigator ,** **DrawerNavigator ,** and **TabNavigator**.
+  * We can also nest these Routers for mare complex transitions.
 
 
 
@@ -103,7 +104,7 @@ React Native-NativeBase Seed is a basic configuration that every React Native ap
 
 This is open source and perfect for any newbie to start with React Native.
 
-This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](https://docs.nativebase.io/), [React Native Router Flux](https://github.com/aksonov/react-native-router-flux), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Router, Push Notification and other basic must-have libraries.
+This is a [React Native](https://github.com/facebook/react-native) Project with [NativeBase](https://docs.nativebase.io/), [React Navigation](https://reactnavigation.org/), [Redux](http://redux.js.org/), [CodePush](https://github.com/Microsoft/react-native-code-push), Push Notification and other basic must-have libraries.
 
 
 ## Get Started
