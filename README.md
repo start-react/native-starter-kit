@@ -82,7 +82,7 @@ The CodePush plugin helps get product improvements in front of your end users in
 [React Navigation](https://reactnavigation.org/) is a routing package that allows you to:
   * Declare different kinds of Routers.
   * Routers fall into the category of **StackNavigator ,** **DrawerNavigator ,** and **TabNavigator**.
-  * We can also nest these Routers for mare complex transitions.
+  * We can also nest these Routers for more complex transitions.
 
 
 
