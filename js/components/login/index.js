@@ -75,6 +75,7 @@ class Login extends Component {
         <Icon active name={input.name === "email" ? "person" : "unlock"} />
         <Input
           placeholder={input.name === "email" ? "EMAIL" : "PASSWORD"}
+          secureTextEntry={input.name === "password" ? true : false}
           {...input}
         />
         {hasError
