@@ -1,3 +1,4 @@
+**Discontinued in favour of [ReactNativeSeed.com](https://reactnativeseed.com/)**
 
 ## Native Starter Kit v6.1.0
 
